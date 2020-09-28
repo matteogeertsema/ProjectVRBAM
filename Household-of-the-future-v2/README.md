@@ -1,0 +1,2 @@
+# Household-of-the-future
+A simulation/game for a stand-alone VR headset to demonstrate the benefits of smart homes regarding healthy aging and energy. The VR experience allows people to experience what it might be like to grow old, have limited movement, poor hearing and eyesight. The goal is to create an IT platform that can be used for immersive healthy aging and energy experiences that can be taken to people’s homes for demonstrations. 
