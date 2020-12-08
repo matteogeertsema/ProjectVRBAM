@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameRepository {
 
-    private ScenarioModel[] scenarios = new ScenarioModel[2];
+    private ScenarioModel[] scenarios = new ScenarioModel[3];
     private PersonaModel[] personas = new PersonaModel[4];
 
     public GameRepository() {
@@ -13,10 +13,10 @@ public class GameRepository {
     }
 
     private void createScenarios() {
-        scenarios[0] = new BathroomAtNightModel();
-        // scenarios[2] = new IRHeatingModel();
+        scenarios[1] = new BathroomAtNightModel();
+        scenarios[0] = new IRHeatingModel();
         // scenarios[1] = new StuckOnToiletModel();
-        scenarios[1] = new NoScenarioModel();
+        scenarios[2] = new NoScenarioModel();
     }
 
     private void createPersonas() {

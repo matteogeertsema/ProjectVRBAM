@@ -1,0 +1,48 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class RefrigeratorInteractable : Interactable
+{
+    private AudioPlayer audioPlayer;
+
+    // Start is called before the first frame update
+    public override void OnStart()
+    {
+        audioPlayer = GameObject.FindObjectOfType<AudioPlayer>();
+        if (!audioPlayer)
+        {
+            Debug.LogError("No instance of Audioplayer found");
+        }
+    }
+
+    public override void OnUpdate()
+    {
+        // Gets called on update
+    }
+
+    public override void OnSelect()
+    {
+        //throw new System.NotImplementedException();
+    }
+
+    public override void OnDeselect()
+    {
+        //throw new System.NotImplementedException();
+    }
+
+    public override void OnActivate()
+    {
+        // lightcontroller.Switch();
+        if (audioPlayer)
+        {
+            audioPlayer.play("Switch");
+        }
+    }
+
+    public override bool isActive()
+    {
+        return false;
+    }
+}
+
