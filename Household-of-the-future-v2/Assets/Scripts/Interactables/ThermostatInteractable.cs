@@ -11,9 +11,8 @@ using UnityEngine.Rendering.PostProcessing;
 /// </summary>
 public class ThermostatInteractable : Interactable {
 
-    public bool isOn = false;
     private AudioPlayer audioPlayer;
-
+    public float cvDuration;
     public PostProcessVolume volume;
 
     private ColorGrading _ColorGrading;
@@ -54,14 +53,13 @@ public class ThermostatInteractable : Interactable {
     IEnumerator Lerp()
 
     {
-        float lerpDuration = 10;
         float startValue = 0;
         float endValue = 75;
         float timeElapsed = 0;
 
-        while (timeElapsed < lerpDuration)
+        while (timeElapsed < cvDuration)
         {
-            _ColorGrading.temperature.value = Mathf.Lerp(startValue, endValue, timeElapsed / lerpDuration);
+            _ColorGrading.temperature.value = Mathf.Lerp(startValue, endValue, timeElapsed / cvDuration);
             timeElapsed += Time.deltaTime;
 
             yield return null;
@@ -81,6 +79,6 @@ public class ThermostatInteractable : Interactable {
     }
 
     public override bool isActive() {
-        return isOn;
+        return false;
     }
 }

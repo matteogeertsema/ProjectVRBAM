@@ -955,7 +955,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783c63a23a6e810418334133c9eb9ed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volume: {fileID: 1480663605}
 --- !u!1 &729957249
 GameObject:
   m_ObjectHideFlags: 0
@@ -4022,6 +4021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a9d083a371e3b4968dd370f34d1bb8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cvDuration: 10
   volume: {fileID: 1480663605}
 --- !u!65 &1752371567
 BoxCollider:
