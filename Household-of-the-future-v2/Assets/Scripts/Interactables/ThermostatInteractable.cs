@@ -10,6 +10,8 @@ using UnityEngine.Rendering.PostProcessing;
 /// @Authors: Florian Molenaars
 /// </summary>
 public class ThermostatInteractable : Interactable {
+
+    public bool isOn = false;
     private AudioPlayer audioPlayer;
 
     public PostProcessVolume volume;
@@ -22,10 +24,8 @@ public class ThermostatInteractable : Interactable {
         if(!audioPlayer){
             Debug.LogError("No instance of Audioplayer found");
         }
-    }
-
-    public override void OnUpdate() {
-        // Gets called on update
+        volume.profile.TryGetSettings(out _ColorGrading);
+        _ColorGrading.temperature.value = 0;
     }
 
     public override void OnSelect() {
@@ -41,12 +41,46 @@ public class ThermostatInteractable : Interactable {
             audioPlayer.play("Switch");
         }
 
-        volume.profile.TryGetSettings(out _ColorGrading);
+        CVon();
+    }
 
-        _ColorGrading.temperature.value = 0;
+
+    public void CVon()
+    {
+        StartCoroutine(Lerp());
+
+    }
+
+    IEnumerator Lerp()
+
+    {
+        float lerpDuration = 10;
+        float startValue = 0;
+        float endValue = 75;
+        float timeElapsed = 0;
+
+        while (timeElapsed < lerpDuration)
+        {
+            _ColorGrading.temperature.value = Mathf.Lerp(startValue, endValue, timeElapsed / lerpDuration);
+            timeElapsed += Time.deltaTime;
+
+            yield return null;
+        }
+
+        _ColorGrading.temperature.value = endValue;
+    }
+
+
+    //blic void CVoff()
+    //
+    //  _ColorGrading.temperature.value = Mathf.Lerp(_ColorGrading.temperature.value, 0, .5f * Time.deltaTime);
+    //
+    public override void OnUpdate()
+    {
+
     }
 
     public override bool isActive() {
-        return false;
+        return isOn;
     }
 }
