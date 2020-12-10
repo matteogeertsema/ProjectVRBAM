@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 /// <summary>
 /// This class is for the lightswitch object. The object takes lightcontroller as object so it knows which lights to turn off/on
@@ -9,13 +10,14 @@ using UnityEngine;
 /// @Authors: Florian Molenaars
 /// </summary>
 public class ThermostatInteractable : Interactable {
-    // public GameObject lightControllerObject;
-    // private LightController lightcontroller;
     private AudioPlayer audioPlayer;
+
+    public PostProcessVolume volume;
+
+    private ColorGrading _ColorGrading;
 
     // Start is called before the first frame update
     public override void OnStart() {
-        // lightcontroller = lightControllerObject.GetComponent<LightController>();
         audioPlayer = GameObject.FindObjectOfType<AudioPlayer>();
         if(!audioPlayer){
             Debug.LogError("No instance of Audioplayer found");
@@ -35,10 +37,13 @@ public class ThermostatInteractable : Interactable {
     }
 
     public override void OnActivate() {
-        // lightcontroller.Switch();
         if (audioPlayer) {
             audioPlayer.play("Switch");
         }
+
+        volume.profile.TryGetSettings(out _ColorGrading);
+
+        _ColorGrading.temperature.value = 0;
     }
 
     public override bool isActive() {

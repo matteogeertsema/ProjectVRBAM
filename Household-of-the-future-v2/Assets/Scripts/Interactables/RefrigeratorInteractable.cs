@@ -1,10 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class RefrigeratorInteractable : Interactable
 {
     private AudioPlayer audioPlayer;
+
+    public PostProcessVolume volume;
+
+    private ColorGrading _ColorGrading;
 
     // Start is called before the first frame update
     public override void OnStart()
@@ -33,11 +38,16 @@ public class RefrigeratorInteractable : Interactable
 
     public override void OnActivate()
     {
-        // lightcontroller.Switch();
+
+
         if (audioPlayer)
         {
             audioPlayer.play("Switch");
         }
+
+        volume.profile.TryGetSettings(out _ColorGrading);
+
+        _ColorGrading.temperature.value = 75;
     }
 
     public override bool isActive()

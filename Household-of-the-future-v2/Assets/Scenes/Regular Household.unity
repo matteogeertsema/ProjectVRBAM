@@ -669,7 +669,7 @@ GameObject:
   m_Component:
   - component: {fileID: 555772498}
   - component: {fileID: 555772499}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Step 2i
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -715,7 +715,7 @@ GameObject:
   m_Component:
   - component: {fileID: 569067759}
   - component: {fileID: 569067760}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Step 4i
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -862,7 +862,7 @@ GameObject:
   - component: {fileID: 685436384}
   - component: {fileID: 685436385}
   - component: {fileID: 685436383}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Refrigerator placeholder
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -955,6 +955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783c63a23a6e810418334133c9eb9ed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  volume: {fileID: 1480663605}
 --- !u!1 &729957249
 GameObject:
   m_ObjectHideFlags: 0
@@ -3397,6 +3398,68 @@ MonoBehaviour:
   secondLine: "30% van de zelfstandig wonende ouderen van 65 jaar en ouder en valt
     minimaal \xE9\xE9n keer per jaar."
   thirdLine: Speel nu hetzelfde scenario in een smart home.
+--- !u!1 &1480663604
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1480663607}
+  - component: {fileID: 1480663606}
+  - component: {fileID: 1480663605}
+  m_Layer: 8
+  m_Name: Post-process Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1480663605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480663604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 10d745f256b548147b70e2fa925db54e, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
+--- !u!65 &1480663606
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480663604}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1480663607
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480663604}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.483615, y: 6.4113207, z: 14.73669}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1529759181
 GameObject:
   m_ObjectHideFlags: 0
@@ -3959,6 +4022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a9d083a371e3b4968dd370f34d1bb8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  volume: {fileID: 1480663605}
 --- !u!65 &1752371567
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4881,6 +4945,78 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feaeba6a1db87ff32acf56d68b45f04c, type: 3}
+--- !u!4 &3057226647445725244 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9076880639422437921, guid: feaeba6a1db87ff32acf56d68b45f04c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3057226647445725243}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3057226647445725245 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5983796033270475491, guid: feaeba6a1db87ff32acf56d68b45f04c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3057226647445725243}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3057226647445725246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3057226647445725245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 3057226647445725244}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1001 &4567652853759918037
 PrefabInstance:
   m_ObjectHideFlags: 0
