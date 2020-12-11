@@ -7,10 +7,6 @@ public class RefrigeratorInteractable : Interactable
 {
     private AudioPlayer audioPlayer;
 
-    public PostProcessVolume volume;
-
-    private ColorGrading _ColorGrading;
-
     // Start is called before the first frame update
     public override void OnStart()
     {
@@ -23,7 +19,7 @@ public class RefrigeratorInteractable : Interactable
 
     public override void OnUpdate()
     {
-        // Gets called on update
+
     }
 
     public override void OnSelect()
@@ -38,16 +34,11 @@ public class RefrigeratorInteractable : Interactable
 
     public override void OnActivate()
     {
-
-
+        
         if (audioPlayer)
         {
             audioPlayer.play("Switch");
         }
-
-        volume.profile.TryGetSettings(out _ColorGrading);
-
-        _ColorGrading.temperature.value = 75;
     }
 
     public override bool isActive()
