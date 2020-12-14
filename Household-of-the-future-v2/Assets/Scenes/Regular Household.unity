@@ -446,13 +446,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196126380}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -1.4169998, y: -3.0240002, z: 4.5479994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1529759183}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &199045638
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,6 +517,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c7645d362470c928ae038842b660c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &326796986
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 326796987}
+  m_Layer: 0
+  m_Name: Off the Sofa Location
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &326796987
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326796986}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.183, y: 0.171, z: 12.918}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1021815344}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &421982272
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,6 +644,36 @@ Transform:
   - {fileID: 1190499451}
   m_Father: {fileID: 0}
   m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &467694506
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 467694507}
+  m_Layer: 0
+  m_Name: On the Small Sofa Location
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &467694507
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467694506}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.886, y: 0.913, z: 10.873}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1021815344}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &524459835
 GameObject:
@@ -1266,7 +1326,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepObjective: Ga zitten op de bank
   triggers:
-  - {fileID: 1021815348}
+  - {fileID: 1021815352}
+  - {fileID: 1021815354}
 --- !u!1 &902097952 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3961291735030776480, guid: cbe22cabbeb1256c683a1c8006ae166e,
@@ -2026,6 +2087,16 @@ PrefabInstance:
       propertyPath: m_Shadows.m_Type
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3961716702026597273, guid: cbe22cabbeb1256c683a1c8006ae166e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3961716702831833231, guid: cbe22cabbeb1256c683a1c8006ae166e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     - target: {fileID: 4119699365082298164, guid: cbe22cabbeb1256c683a1c8006ae166e,
         type: 3}
       propertyPath: curtains.Array.data[0]
@@ -2646,6 +2717,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3323996e9e5f8c04ebd7c9a92742e897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1021815344 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1918094637886413681, guid: cbe22cabbeb1256c683a1c8006ae166e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1021815319}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1021815345 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5756827639931479693, guid: cbe22cabbeb1256c683a1c8006ae166e,
@@ -2706,6 +2783,46 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1021815319}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1021815351 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3961716702831833231, guid: cbe22cabbeb1256c683a1c8006ae166e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1021815319}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1021815352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021815351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66d83fca6e0bd854087bd15271261bbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTheSofaLocation: {fileID: 1739513847}
+  offTheSofaLocation: {fileID: 326796987}
+--- !u!1 &1021815353 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3961716702026597273, guid: cbe22cabbeb1256c683a1c8006ae166e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1021815319}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1021815354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021815353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66d83fca6e0bd854087bd15271261bbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTheSofaLocation: {fileID: 467694507}
+  offTheSofaLocation: {fileID: 2093858325}
 --- !u!1 &1032180810
 GameObject:
   m_ObjectHideFlags: 0
@@ -3672,6 +3789,36 @@ Transform:
   m_Father: {fileID: 1190499451}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1739513846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1739513847}
+  m_Layer: 0
+  m_Name: On the Sofa Location
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1739513847
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739513846}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 12.693, y: 0.626, z: 12.535}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1021815344}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1742453229
 GameObject:
   m_ObjectHideFlags: 0
@@ -4188,6 +4335,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstLine: Het is koud buiten. Je bent net thuisgekomen van de supermarkt.
   secondLine: ' Het eerste dat je wilt doen is jezelf opwarmen.'
+--- !u!1 &2093858324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2093858325}
+  m_Layer: 0
+  m_Name: Off the Small Sofa Location
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2093858325
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093858324}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.151, y: 0.116, z: 11.508}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1021815344}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2125352262
 GameObject:
   m_ObjectHideFlags: 0
