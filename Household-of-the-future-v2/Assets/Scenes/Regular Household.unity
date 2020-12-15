@@ -729,7 +729,7 @@ GameObject:
   m_Component:
   - component: {fileID: 555772498}
   - component: {fileID: 555772499}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Step 2i
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -775,7 +775,7 @@ GameObject:
   m_Component:
   - component: {fileID: 569067759}
   - component: {fileID: 569067760}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Step 4i
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4498,6 +4498,11 @@ PrefabInstance:
       propertyPath: m_CullingMask.m_Bits
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 3057226647163870934, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: canControlPlayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3057226647313494340, guid: feaeba6a1db87ff32acf56d68b45f04c,
         type: 3}
       propertyPath: firstOutroButton
@@ -4877,6 +4882,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6551380663942454719, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: m_Text
+      value: Ga naar beneden
       objectReference: {fileID: 0}
     - target: {fileID: 6800209650856915629, guid: feaeba6a1db87ff32acf56d68b45f04c,
         type: 3}
