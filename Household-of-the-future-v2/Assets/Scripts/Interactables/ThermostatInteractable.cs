@@ -13,6 +13,8 @@ public class ThermostatInteractable : Interactable {
 
     private AudioPlayer audioPlayer;
     public float cvDuration;
+    private bool isOn = false;
+
     public PostProcessVolume volume;
 
     private ColorGrading _ColorGrading;
@@ -24,7 +26,7 @@ public class ThermostatInteractable : Interactable {
             Debug.LogError("No instance of Audioplayer found");
         }
         volume.profile.TryGetSettings(out _ColorGrading);
-        _ColorGrading.temperature.value = 0;
+        setTemperature(0);
     }
 
     public override void OnSelect() {
@@ -40,32 +42,27 @@ public class ThermostatInteractable : Interactable {
             audioPlayer.play("Switch");
         }
 
-        CVon();
+        StartCoroutine(CVon());
     }
 
-
-    public void CVon()
-    {
-        StartCoroutine(Lerp());
-
-    }
-
-    IEnumerator Lerp()
+    IEnumerator CVon()
 
     {
         float startValue = 0;
         float endValue = 75;
         float timeElapsed = 0;
 
+        isOn = true;
+
         while (timeElapsed < cvDuration)
         {
-            _ColorGrading.temperature.value = Mathf.Lerp(startValue, endValue, timeElapsed / cvDuration);
+            setTemperature(Mathf.Lerp(startValue, endValue, timeElapsed / cvDuration));
             timeElapsed += Time.deltaTime;
 
             yield return null;
         }
 
-        _ColorGrading.temperature.value = endValue;
+        setTemperature(endValue);
     }
 
 
@@ -79,6 +76,16 @@ public class ThermostatInteractable : Interactable {
     }
 
     public override bool isActive() {
-        return false;
+        return isOn;
+    }
+
+    public float getTemperature()
+    {
+        return _ColorGrading.temperature.value;
+    }
+
+    private void setTemperature(float temp)
+    {
+        _ColorGrading.temperature.value = temp;
     }
 }
