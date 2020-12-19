@@ -13,7 +13,8 @@ public class ThermostatInteractable : Interactable {
 
     private AudioPlayer audioPlayer;
     public float cvDuration;
-    private bool isOn = false;
+    private bool isBusy = false;
+    private bool isWorking = false;
 
     public PostProcessVolume volume;
 
@@ -42,7 +43,14 @@ public class ThermostatInteractable : Interactable {
             audioPlayer.play("Switch");
         }
 
-        StartCoroutine(CVon());
+        if (!isWorking)
+        {
+            StartCoroutine(CVon());
+        } else if (isWorking)
+        {
+            StartCoroutine(CVoff());
+        }
+        
     }
 
     IEnumerator CVon()
@@ -52,7 +60,7 @@ public class ThermostatInteractable : Interactable {
         float endValue = 75;
         float timeElapsed = 0;
 
-        isOn = true;
+        isBusy = true;
 
         while (timeElapsed < cvDuration)
         {
@@ -63,20 +71,44 @@ public class ThermostatInteractable : Interactable {
         }
 
         setTemperature(endValue);
+        isBusy = false;
+        isWorking = true;
     }
 
+    IEnumerator CVoff()
 
-    //blic void CVoff()
-    //
-    //  _ColorGrading.temperature.value = Mathf.Lerp(_ColorGrading.temperature.value, 0, .5f * Time.deltaTime);
-    //
+    {
+        float startValue = 75;
+        float endValue = 0;
+        float timeElapsed = 0;
+
+        isBusy = true;
+
+        while (timeElapsed < cvDuration)
+        {
+            setTemperature(Mathf.Lerp(startValue, endValue, timeElapsed / cvDuration));
+            timeElapsed += Time.deltaTime;
+
+            yield return null;
+        }
+
+        setTemperature(endValue);
+        isBusy = false;
+        isWorking = false;
+    }
+
     public override void OnUpdate()
     {
 
     }
 
     public override bool isActive() {
-        return isOn;
+        return isBusy;
+    }
+
+    public bool isOn()
+    {
+        return isWorking;
     }
 
     public float getTemperature()
