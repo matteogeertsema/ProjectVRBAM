@@ -6,6 +6,7 @@ public class TemperatureDisplay : MonoBehaviour
 {
     public ThermostatInteractable thermostatInteractable;
     public UnityEngine.UI.Text temperatureText;
+    public TemperatureController temperatureController;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class TemperatureDisplay : MonoBehaviour
     {
         if (thermostatInteractable.isActive() == true)
         {
-            string s = thermostatInteractable.getTemperature().ToString();
+            string s = temperatureController.getTemperature().ToString();
             setTemperatureText(s);
         }
     }

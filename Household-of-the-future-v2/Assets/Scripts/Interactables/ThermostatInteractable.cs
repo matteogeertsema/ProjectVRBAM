@@ -16,9 +16,7 @@ public class ThermostatInteractable : Interactable {
     private bool isBusy = false;
     private bool isWorking = false;
 
-    public PostProcessVolume volume;
-
-    private ColorGrading _ColorGrading;
+    public TemperatureController temperatureController;
 
     // Start is called before the first frame update
     public override void OnStart() {
@@ -26,8 +24,6 @@ public class ThermostatInteractable : Interactable {
         if(!audioPlayer){
             Debug.LogError("No instance of Audioplayer found");
         }
-        volume.profile.TryGetSettings(out _ColorGrading);
-        setTemperature(0);
     }
 
     public override void OnSelect() {
@@ -45,9 +41,11 @@ public class ThermostatInteractable : Interactable {
 
         if (!isWorking)
         {
+            isBusy = true;
             StartCoroutine(CVon());
         } else if (isWorking)
         {
+            isBusy = true;
             StartCoroutine(CVoff());
         }
         
@@ -56,21 +54,17 @@ public class ThermostatInteractable : Interactable {
     IEnumerator CVon()
 
     {
-        float startValue = 0;
-        float endValue = 75;
         float timeElapsed = 0;
-
-        isBusy = true;
 
         while (timeElapsed < cvDuration)
         {
-            setTemperature(Mathf.Lerp(startValue, endValue, timeElapsed / cvDuration));
+            temperatureController.setTemperature(Mathf.Lerp(temperatureController.getMinTemp(), temperatureController.getMaxTemp(), timeElapsed / cvDuration));
             timeElapsed += Time.deltaTime;
 
             yield return null;
         }
+        temperatureController.setTemperature(temperatureController.getMaxTemp());
 
-        setTemperature(endValue);
         isBusy = false;
         isWorking = true;
     }
@@ -78,28 +72,20 @@ public class ThermostatInteractable : Interactable {
     IEnumerator CVoff()
 
     {
-        float startValue = 75;
-        float endValue = 0;
         float timeElapsed = 0;
-
-        isBusy = true;
 
         while (timeElapsed < cvDuration)
         {
-            setTemperature(Mathf.Lerp(startValue, endValue, timeElapsed / cvDuration));
+            temperatureController.setTemperature(Mathf.Lerp(temperatureController.getMaxTemp(), temperatureController.getMinTemp(), timeElapsed / cvDuration));
             timeElapsed += Time.deltaTime;
 
             yield return null;
         }
 
-        setTemperature(endValue);
+        temperatureController.setTemperature(temperatureController.getMinTemp());
+    
         isBusy = false;
         isWorking = false;
-    }
-
-    public override void OnUpdate()
-    {
-
     }
 
     public override bool isActive() {
@@ -111,13 +97,8 @@ public class ThermostatInteractable : Interactable {
         return isWorking;
     }
 
-    public float getTemperature()
+    public override void OnUpdate()
     {
-        return _ColorGrading.temperature.value;
-    }
 
-    private void setTemperature(float temp)
-    {
-        _ColorGrading.temperature.value = temp;
     }
 }

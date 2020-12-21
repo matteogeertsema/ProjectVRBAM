@@ -1432,6 +1432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thermostatInteractable: {fileID: 1752371566}
   temperatureText: {fileID: 128061606}
+  temperatureController: {fileID: 1480663608}
 --- !u!1 &850913509
 GameObject:
   m_ObjectHideFlags: 0
@@ -3747,8 +3748,9 @@ GameObject:
   - component: {fileID: 1480663607}
   - component: {fileID: 1480663606}
   - component: {fileID: 1480663605}
+  - component: {fileID: 1480663608}
   m_Layer: 8
-  m_Name: Post-process Volume
+  m_Name: TemperatureVolume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3798,6 +3800,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1480663608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480663604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f75cfdfb04416a4f8c5358fc4fdd4b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: {fileID: 1480663605}
+  minTemp: 0
+  maxTemp: 75
 --- !u!1 &1529759181
 GameObject:
   m_ObjectHideFlags: 0
@@ -4390,7 +4407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cvDuration: 10
-  volume: {fileID: 1480663605}
+  temperatureController: {fileID: 1480663608}
 --- !u!65 &1752371567
 BoxCollider:
   m_ObjectHideFlags: 0
