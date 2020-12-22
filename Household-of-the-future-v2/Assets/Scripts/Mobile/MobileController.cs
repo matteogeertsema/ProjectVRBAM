@@ -13,6 +13,7 @@ public class MobileController : MonoBehaviour {
 
     private List<GameObject> panelList;
     private List<GameObject> buttonListMainMenu;
+    
 
     /// <summary>
     /// the domotica that the main panel shows
@@ -66,6 +67,11 @@ public class MobileController : MonoBehaviour {
         if (this.gameObject.activeSelf == true) {
             SetLightButonsToRightState();
             SetCurtainsButonsToRightState();
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            print("moi");
+            OpenSmartphone();
         }
     }
 
@@ -207,10 +213,16 @@ public class MobileController : MonoBehaviour {
 
     public void OpenSmartphone() {
         // set mobilephone to active
-        if (this.gameObject.transform.GetChild(0).gameObject.activeSelf) {
-            this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
-        } else {
+       
+        
+          if (this.gameObject.transform.GetChild(0).gameObject.activeSelf)
+            {
+                this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            }
+            else
+            {
+           
             this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
-        }
+            }
     }
 }
