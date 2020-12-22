@@ -12,11 +12,14 @@ public class UIHandler : MonoBehaviour {
 
     public UnityEngine.UI.Text stepObjectiveText;
 
+
     public GameObject introButton;
     public GameObject outroButton;
 
     public GameObject canvas;
     public GameObject objectiveCanvas;
+    public GameObject temperatureCanvas;
+
 
     public void displayIntro(string title, Introduction intro) {
         setTextFieldsForIntro(title, intro.getFirstLine(), intro.getSecondLine());
@@ -26,6 +29,7 @@ public class UIHandler : MonoBehaviour {
 
     public void displayOutro(Outro outro) {
         setTextFieldsForOutro(outro.getFirstLine(), outro.getSecondLine(), outro.getThirdLine());
+        temperatureCanvas.SetActive(false);
         canvas.SetActive(true);
         StartCoroutine(startOutroTextFadeInAnimation());
     }
@@ -117,6 +121,7 @@ public class UIHandler : MonoBehaviour {
         outroButton.SetActive(true);
     }
 
+
     private void setTitle(string title) {
         this.titleText.text = title;
     }
@@ -145,8 +150,10 @@ public class UIHandler : MonoBehaviour {
         return text.text != "" || text.text != null;
     }
 
+
     public void onIntroButtonClick() {
         onButtonClick();
+        temperatureCanvas.SetActive(true);
     }
 
     public void onOutroButtonClick() {

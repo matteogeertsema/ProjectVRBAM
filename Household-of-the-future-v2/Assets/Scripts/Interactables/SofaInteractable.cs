@@ -34,7 +34,7 @@ public class SofaInteractable : Interactable
 
         this.GetComponent<BoxCollider>().isTrigger = true;
         isSittingOnTheSofa = true;
-        StartCoroutine(waitAmoutOfSeconds(3));
+        StartCoroutine(waitAmoutOfSeconds(20));
 
     }
 
@@ -42,6 +42,11 @@ public class SofaInteractable : Interactable
     {
         for (float i = 0; i <= amountInSeconds; i += Time.deltaTime)
         {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                getOffSofa();
+                break;
+            }
             yield return null;
         }
         getOffSofa();

@@ -13,9 +13,10 @@ public class ThermostatInteractable : Interactable {
 
     private AudioPlayer audioPlayer;
     public float cvDuration;
-    public PostProcessVolume volume;
+    private bool isBusy = false;
+    private bool isWorking = false;
 
-    private ColorGrading _ColorGrading;
+    public TemperatureController temperatureController;
 
     // Start is called before the first frame update
     public override void OnStart() {
@@ -23,8 +24,6 @@ public class ThermostatInteractable : Interactable {
         if(!audioPlayer){
             Debug.LogError("No instance of Audioplayer found");
         }
-        volume.profile.TryGetSettings(out _ColorGrading);
-        _ColorGrading.temperature.value = 0;
     }
 
     public override void OnSelect() {
@@ -40,45 +39,66 @@ public class ThermostatInteractable : Interactable {
             audioPlayer.play("Switch");
         }
 
-        CVon();
+        if (!isWorking)
+        {
+            isBusy = true;
+            StartCoroutine(CVon());
+        } else if (isWorking)
+        {
+            isBusy = true;
+            StartCoroutine(CVoff());
+        }
+        
     }
 
-
-    public void CVon()
-    {
-        StartCoroutine(Lerp());
-
-    }
-
-    IEnumerator Lerp()
+    IEnumerator CVon()
 
     {
-        float startValue = 0;
-        float endValue = 75;
         float timeElapsed = 0;
 
         while (timeElapsed < cvDuration)
         {
-            _ColorGrading.temperature.value = Mathf.Lerp(startValue, endValue, timeElapsed / cvDuration);
+            temperatureController.setTemperature(Mathf.Lerp(temperatureController.getMinTemp(), temperatureController.getMaxTemp(), timeElapsed / cvDuration));
+            timeElapsed += Time.deltaTime;
+
+            yield return null;
+        }
+        temperatureController.setTemperature(temperatureController.getMaxTemp());
+
+        isBusy = false;
+        isWorking = true;
+    }
+
+    IEnumerator CVoff()
+
+    {
+        float timeElapsed = 0;
+
+        while (timeElapsed < cvDuration)
+        {
+            temperatureController.setTemperature(Mathf.Lerp(temperatureController.getMaxTemp(), temperatureController.getMinTemp(), timeElapsed / cvDuration));
             timeElapsed += Time.deltaTime;
 
             yield return null;
         }
 
-        _ColorGrading.temperature.value = endValue;
-    }
-
-
-    //blic void CVoff()
-    //
-    //  _ColorGrading.temperature.value = Mathf.Lerp(_ColorGrading.temperature.value, 0, .5f * Time.deltaTime);
-    //
-    public override void OnUpdate()
-    {
-
+        temperatureController.setTemperature(temperatureController.getMinTemp());
+    
+        isBusy = false;
+        isWorking = false;
     }
 
     public override bool isActive() {
-        return false;
+        return isBusy;
+    }
+
+    public bool isOn()
+    {
+        return isWorking;
+    }
+
+    public override void OnUpdate()
+    {
+
     }
 }
