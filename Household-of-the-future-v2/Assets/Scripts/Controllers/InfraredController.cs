@@ -5,21 +5,53 @@ using UnityEngine;
 public class InfraredController : MonoBehaviour
 {
     public string controllerName = "Placeholder";
-    private bool isWorking;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float infraredDuration;
+    private bool isWorking = false;
+    public TemperatureController temperatureController;
+
 
     public void infraredOn()
     {
-        print("Infrarood aan");
+        isWorking = true;
+        StartCoroutine(infraredOnActive());
     }
 
-    public void infraredoff()
+    IEnumerator infraredOnActive()
+
     {
-        print("Infrarood uit");
+        float timeElapsed = 0;
+
+        while (timeElapsed < infraredDuration)
+        {
+            temperatureController.setTemperature(Mathf.Lerp(temperatureController.getMinTemp(), temperatureController.getMaxTemp(), timeElapsed / infraredDuration));
+            timeElapsed += Time.deltaTime;
+
+            yield return null;
+        }
+        temperatureController.setTemperature(temperatureController.getMaxTemp());
+
+    }
+
+    public void infraredOff()
+    {
+        isWorking = false;
+        StartCoroutine(infraredOffActive());
+    }
+
+    IEnumerator infraredOffActive()
+
+    {
+        float timeElapsed = 0;
+
+        while (timeElapsed < infraredDuration)
+        {
+            temperatureController.setTemperature(Mathf.Lerp(temperatureController.getMaxTemp(), temperatureController.getMinTemp(), timeElapsed / infraredDuration));
+            timeElapsed += Time.deltaTime;
+
+            yield return null;
+        }
+        temperatureController.setTemperature(temperatureController.getMinTemp());
+
     }
 
     public bool isOn()

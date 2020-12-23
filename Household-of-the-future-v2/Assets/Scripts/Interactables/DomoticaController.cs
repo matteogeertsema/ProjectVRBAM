@@ -45,7 +45,13 @@ public class DomoticaController : MonoBehaviour {
 
     public void toggleInfrared(InfraredController controller)
     {
-        controller.infraredOn();
+        if (CheckifInfraredAreOn(controller))
+        {
+            controller.infraredOff();
+        } else
+        {
+            controller.infraredOn();
+        }
     }
 
     // public void SwitchLightOnRoom(LightController liController) {

@@ -6759,4 +6759,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1578fc50f33687b4eaf804b5934d32b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controllerName: Placeholder
+  controllerName: Woonkamer1
+  infraredDuration: 10
+  temperatureController: {fileID: 356534992}
+--- !u!1 &5213101711184079429 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7328424672657098279, guid: 7be56d239f706b9719f98e130c49cab1,
+    type: 3}
+  m_PrefabInstance: {fileID: 5213101711184079392}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5213101711184079430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5213101711184079429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1578fc50f33687b4eaf804b5934d32b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controllerName: Woonkamer2
+  infraredDuration: 10
+  temperatureController: {fileID: 356534992}

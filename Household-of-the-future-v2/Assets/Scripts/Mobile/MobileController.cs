@@ -72,6 +72,7 @@ public class MobileController : MonoBehaviour {
         if (this.gameObject.activeSelf == true) {
             SetLightButonsToRightState();
             SetCurtainsButonsToRightState();
+            SetInfraredButtonsToRightState();
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -196,7 +197,7 @@ public class MobileController : MonoBehaviour {
         }
     }
 
-    private void SetInfraredButonsToRightState()
+    private void SetInfraredButtonsToRightState()
     {
         // sets the on/off toggle button to the right position. This checks if more than half of the infrared of the controller is on/off and then switches accordingly
         foreach (KeyValuePair<GameObject, InfraredController> button in buttonDictInfraredMenu)
