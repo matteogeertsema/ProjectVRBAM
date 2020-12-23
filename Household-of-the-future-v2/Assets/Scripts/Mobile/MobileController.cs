@@ -20,6 +20,7 @@ public class MobileController : MonoBehaviour {
     /// </summary>
     Dictionary<GameObject, LightController> buttonDictLightsMenu;
     Dictionary<GameObject, CurtainController> buttonDictCurtainMenu;
+    Dictionary<GameObject, InfraredController> buttonDictInfraredMenu;
 
     private DomoticaController domoticaController;
     public GameObject buttonPrefab;
@@ -27,6 +28,7 @@ public class MobileController : MonoBehaviour {
 
     private LightController[] lightControllers;
     private CurtainController[] curtainControllers;
+    private InfraredController[] infraredControllers;
 
     /// <summary>
     /// this is for the on/off sliders on the buttons
@@ -39,6 +41,7 @@ public class MobileController : MonoBehaviour {
     public GameObject lightMenuPanel;
     public GameObject curtainMenuPanel;
     public GameObject messagePanel;
+    public GameObject infraredMenuPanel;
 
     private void Awake() {
         domoticaController = GameObject.FindObjectOfType<DomoticaController>();
@@ -53,6 +56,7 @@ public class MobileController : MonoBehaviour {
 
         buttonDictLightsMenu = new Dictionary<GameObject, LightController>();
         buttonDictCurtainMenu = new Dictionary<GameObject, CurtainController>();
+        buttonDictInfraredMenu = new Dictionary<GameObject, InfraredController>();
         buttonListMainMenu = new List<GameObject>();
 
         // calls the function create buttons to create buttons of a specific type of domotica,
@@ -60,6 +64,7 @@ public class MobileController : MonoBehaviour {
         CreateButtons(typeof(string));
         CreateButtons(typeof(CurtainController));
         CreateButtons(typeof(LightController));
+        CreateButtons(typeof(InfraredController));
         transform.GetChild(0).gameObject.SetActive(false);
     }
 
@@ -70,7 +75,6 @@ public class MobileController : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            print("moi");
             OpenSmartphone();
         }
     }
@@ -140,6 +144,30 @@ public class MobileController : MonoBehaviour {
                 buttonDictCurtainMenu.Add(butn, curtainControllers[z]);
             }
         }
+        if (type == typeof(InfraredController))
+        {
+            // Create buttons of all infraredcontrollers with the check "show controller in mobile"
+            InfraredController[] infraredControllers = new InfraredController[domoticaController.GetListInfrared().Length];
+            infraredControllers = domoticaController.GetListInfrared();
+            for (int i = 0; i < infraredControllers.Length; i++)
+            {
+                int z = i;
+                GameObject butn = Instantiate(toggleButtonPrefab) as GameObject;
+                butn.transform.SetParent(infraredMenuPanel.transform, false);
+                butn.transform.localPosition = new Vector3(0, (x - (a * i)), 0);
+                butn.GetComponentInChildren<Text>().text = infraredControllers[i].controllerName;
+                if (butn != null)
+                {
+                    on = butn.transform.Find("Toggle/ON");
+                    off = butn.transform.Find("Toggle/OFF");
+                }
+                on.GetComponent<Text>().text = "Aan";
+                off.GetComponent<Text>().text = "Uit";
+                ButtonOnOff = butn.transform.Find("Toggle/Button");
+                ButtonOnOff.GetComponent<Button>().onClick.AddListener(() => SwitchInfrared(infraredControllers[z]));
+                buttonDictInfraredMenu.Add(butn, infraredControllers[z]);
+            }
+        }
     }
 
     private void SetLightButonsToRightState() {
@@ -167,12 +195,36 @@ public class MobileController : MonoBehaviour {
             }
         }
     }
+
+    private void SetInfraredButonsToRightState()
+    {
+        // sets the on/off toggle button to the right position. This checks if more than half of the infrared of the controller is on/off and then switches accordingly
+        foreach (KeyValuePair<GameObject, InfraredController> button in buttonDictInfraredMenu)
+        {
+            ToggleController toggleController = button.Key.GetComponentInChildren<ToggleController>();
+
+            if (domoticaController.CheckifInfraredAreOn(button.Value))
+            {
+                toggleController.SwitchButtonToOn();
+            }
+            else
+            {
+                toggleController.SwitchButtonToOff();
+            }
+        }
+    }
+
     private void SwitchLights(LightController lightController) {
         domoticaController.toggleLightsOf(lightController);
     }
 
     private void SwitchCurtains(CurtainController curtainController) {
         domoticaController.toggleCurtainsOf(curtainController);
+    }
+
+    private void SwitchInfrared(InfraredController infraredController)
+    {
+        domoticaController.toggleInfrared(infraredController);
     }
 
     void ResetPanels() {
@@ -196,6 +248,10 @@ public class MobileController : MonoBehaviour {
         }
         if (s == "Gordijnen") {
             OpenPanel(curtainMenuPanel);
+        }
+        if (s == "Infrarood")
+        {
+            OpenPanel(infraredMenuPanel);
         }
     }
 

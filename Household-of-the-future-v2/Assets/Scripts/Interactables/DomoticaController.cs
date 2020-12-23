@@ -10,9 +10,9 @@ using UnityEngine;
 /// @Authors: Florian Molenaars
 /// </summary>
 public class DomoticaController : MonoBehaviour {
-    // Start is called before the first frame update
     private LightController[] lightControllers;
     private CurtainController[] curtainControllers;
+    private InfraredController[] infraredControllers;
 
     //to add domotica in mobile, add to this list
     private List<string> domotica;
@@ -20,10 +20,11 @@ public class DomoticaController : MonoBehaviour {
     void Awake() {
         lightControllers = GameObject.FindObjectsOfType<LightController>();
         curtainControllers = GameObject.FindObjectsOfType<CurtainController>();
+        infraredControllers = GameObject.FindObjectsOfType<InfraredController>();
         domotica = new List<string>();
         domotica.Add("Lampen");
         domotica.Add("Gordijnen");
-        domotica.Add("Verwarming");
+        domotica.Add("Infrarood");
     }
 
     public void toggleLightsOf(LightController controller) {
@@ -40,6 +41,11 @@ public class DomoticaController : MonoBehaviour {
         } else {
             controller.OpenCurtains(false);
         }
+    }
+
+    public void toggleInfrared(InfraredController controller)
+    {
+        controller.infraredOn();
     }
 
     // public void SwitchLightOnRoom(LightController liController) {
@@ -160,6 +166,17 @@ public class DomoticaController : MonoBehaviour {
         }
     }
 
+    public bool CheckifInfraredAreOn(InfraredController infraredController)
+    {
+        if (infraredController.isOn() == true)
+        {
+            return true;
+        } else
+        {
+            return false;
+        }
+    }
+
     public List<string> GetListDomotica() {
         return domotica;
     }
@@ -168,5 +185,10 @@ public class DomoticaController : MonoBehaviour {
     }
     public CurtainController[] GetListCurtains() {
         return curtainControllers;
+    }
+
+    public InfraredController[] GetListInfrared()
+    {
+        return infraredControllers;
     }
 }

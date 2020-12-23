@@ -44,22 +44,16 @@ public class TemperatureDisplay : MonoBehaviour
         {
             case float t when (t >= 0 && t < 15):
                 return 17;
-                break;
             case float t when (t >= 15 && t < 30):
                 return 18;
-                break;
             case float t when (t >= 30 && t < 45):
                 return 19;
-                break;
             case float t when (t >= 45 && t < 60):
                 return 20;
-                break;
             case float t when (t >= 60 && t <= 75):
                 return 21;
-                break;
             default:
                 return 17;
-                break;
         }
     }
 }
