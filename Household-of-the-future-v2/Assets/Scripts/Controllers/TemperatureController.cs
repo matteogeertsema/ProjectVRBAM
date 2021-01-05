@@ -8,6 +8,7 @@ public class TemperatureController : MonoBehaviour
     public PostProcessVolume volume;
     public float minTemp;
     public float maxTemp;
+    private float currentTemp;
 
     private ColorGrading _ColorGrading;
 
@@ -26,6 +27,7 @@ public class TemperatureController : MonoBehaviour
     public void setTemperature(float temp)
     {
         _ColorGrading.temperature.value = temp;
+        setCurrentTemp(temp);
     }
 
     public float getMinTemp()
@@ -36,5 +38,15 @@ public class TemperatureController : MonoBehaviour
     public float getMaxTemp()
     {
         return maxTemp;
+    }
+
+    public float getCurrentTemp()
+    {
+        return currentTemp;
+    }
+
+    public void setCurrentTemp(float temp)
+    {
+        this.currentTemp = temp;
     }
 }

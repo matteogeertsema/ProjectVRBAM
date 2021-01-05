@@ -26,14 +26,6 @@ public class ThermostatInteractable : Interactable {
         }
     }
 
-    public override void OnSelect() {
-        //throw new System.NotImplementedException();
-    }
-
-    public override void OnDeselect() {
-        //throw new System.NotImplementedException();
-    }
-
     public override void OnActivate() {
         if (audioPlayer) {
             audioPlayer.play("Switch");
@@ -42,10 +34,12 @@ public class ThermostatInteractable : Interactable {
         if (!isWorking)
         {
             isBusy = true;
+            isWorking = true;
             StartCoroutine(CVon());
         } else if (isWorking)
         {
             isBusy = true;
+            isWorking = false;
             StartCoroutine(CVoff());
         }
         
@@ -55,37 +49,47 @@ public class ThermostatInteractable : Interactable {
 
     {
         float timeElapsed = 0;
+        float temporarilyTemp = temperatureController.getCurrentTemp();
 
         while (timeElapsed < cvDuration)
         {
-            temperatureController.setTemperature(Mathf.Lerp(temperatureController.getMinTemp(), temperatureController.getMaxTemp(), timeElapsed / cvDuration));
+            temperatureController.setTemperature(Mathf.Lerp(temporarilyTemp, temperatureController.getMaxTemp(), timeElapsed / cvDuration));
             timeElapsed += Time.deltaTime;
+
+            if (isWorking == false)
+            {
+                yield break;
+            }
 
             yield return null;
         }
         temperatureController.setTemperature(temperatureController.getMaxTemp());
 
         isBusy = false;
-        isWorking = true;
     }
 
     IEnumerator CVoff()
 
     {
         float timeElapsed = 0;
+        float temporarilyTemp = temperatureController.getCurrentTemp();
 
         while (timeElapsed < cvDuration)
         {
-            temperatureController.setTemperature(Mathf.Lerp(temperatureController.getMaxTemp(), temperatureController.getMinTemp(), timeElapsed / cvDuration));
+            temperatureController.setTemperature(Mathf.Lerp(temporarilyTemp, temperatureController.getMinTemp(), timeElapsed / cvDuration));
             timeElapsed += Time.deltaTime;
+
+            if (isWorking == true)
+            {
+                yield break;
+            }
 
             yield return null;
         }
 
         temperatureController.setTemperature(temperatureController.getMinTemp());
     
-        isBusy = false;
-        isWorking = false;
+         isBusy = false;
     }
 
     public override bool isActive() {
@@ -101,4 +105,15 @@ public class ThermostatInteractable : Interactable {
     {
 
     }
+
+    public override void OnSelect()
+    {
+        //throw new System.NotImplementedException();
+    }
+
+    public override void OnDeselect()
+    {
+        //throw new System.NotImplementedException();
+    }
+
 }

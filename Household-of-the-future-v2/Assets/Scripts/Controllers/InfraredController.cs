@@ -20,11 +20,17 @@ public class InfraredController : MonoBehaviour
 
     {
         float timeElapsed = 0;
+        float temporarilyTemp = temperatureController.getCurrentTemp();
 
         while (timeElapsed < infraredDuration)
         {
-            temperatureController.setTemperature(Mathf.Lerp(temperatureController.getMinTemp(), temperatureController.getMaxTemp(), timeElapsed / infraredDuration));
+            temperatureController.setTemperature(Mathf.Lerp(temporarilyTemp, temperatureController.getMaxTemp(), timeElapsed / infraredDuration));
             timeElapsed += Time.deltaTime;
+
+            if (isWorking == false)
+            {
+                yield break;
+            }
 
             yield return null;
         }
@@ -42,11 +48,17 @@ public class InfraredController : MonoBehaviour
 
     {
         float timeElapsed = 0;
+        float temporarilyTemp = temperatureController.getCurrentTemp();
 
         while (timeElapsed < infraredDuration)
         {
-            temperatureController.setTemperature(Mathf.Lerp(temperatureController.getMaxTemp(), temperatureController.getMinTemp(), timeElapsed / infraredDuration));
+            temperatureController.setTemperature(Mathf.Lerp(temporarilyTemp, temperatureController.getMinTemp(), timeElapsed / infraredDuration));
             timeElapsed += Time.deltaTime;
+
+            if (isWorking == true)
+            {
+                yield break;
+            }
 
             yield return null;
         }
@@ -58,4 +70,5 @@ public class InfraredController : MonoBehaviour
     {
         return isWorking;
     }
+
 }
