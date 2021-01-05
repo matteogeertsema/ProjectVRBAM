@@ -10,7 +10,7 @@ public class CurvedMenuController : MonoBehaviour {
     public List<Transform> CardSpawnpoints;
 
     private Game game;
-    private int MAX_NUMBER_OF_CARD_OPTION_SLOTS = 7;
+    private int MAX_NUMBER_OF_CARD_OPTION_SLOTS = 1;
 
     private List<GameObject> scenarioCards = new List<GameObject>();
     private List<GameObject> personaCards = new List<GameObject>();
