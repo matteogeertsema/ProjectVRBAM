@@ -42,7 +42,7 @@ public class SofaInteractable : Interactable
     {
         for (float i = 0; i <= amountInSeconds; i += Time.deltaTime)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 getOffSofa();
                 break;
