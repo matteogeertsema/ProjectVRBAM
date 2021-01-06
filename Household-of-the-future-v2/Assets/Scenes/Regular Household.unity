@@ -3936,7 +3936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63effb604995590449560d3b824a82b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioName: 
+  audioName: Door
   playAtIntro: 1
   playAtOutro: 0
   delayInSeconds: 0

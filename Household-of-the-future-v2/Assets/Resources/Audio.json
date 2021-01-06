@@ -11,6 +11,11 @@
 			"volume": "0.5f"
 		},
 		{
+			"name": "Door",
+			"path": "Audio/Door",
+			"volume": "0.5f"
+		},
+		{
 			"name": "MoveCurtain",
 			"path": "Audio/MoveCurtain",
 			"volume": "0.75f"
