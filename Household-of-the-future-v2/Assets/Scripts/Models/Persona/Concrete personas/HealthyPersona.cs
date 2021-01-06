@@ -6,9 +6,9 @@ public class HealthyPersona : PersonaModel {
 
     public HealthyPersona() {
         this.fullname = "Marieke Weerts";
-        this.age = 68;
+        this.age = 40;
         this.photoPath = "Persona/marieke";
-        this.biography = "";
+        this.biography = "Marieke wil haar huis transformeren naar een smart home. Ze heeft zonnepanelen aangeschaft en wil energie besparen op verwarmen door middel van domotica";
         this.limitations = new string[1] { "Geen" };
         this.hearing = new OptimalHearing();
         this.eyesight = new OptimalEyesight();

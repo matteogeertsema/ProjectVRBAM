@@ -3,5 +3,5 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class IRHeatingModel : ScenarioModel {
-    public IRHeatingModel() : base(1, "Infrared Heating", "Scenario/nachtbezoek") { }
+    public IRHeatingModel() : base(3, "Infrared Heating", "Scenario/IR-scenario") { }
 }
