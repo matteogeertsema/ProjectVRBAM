@@ -7,28 +7,48 @@ public class TemperatureDisplay : MonoBehaviour
 {
     public ThermostatInteractable thermostatInteractable;
     public UnityEngine.UI.Text temperatureText;
+    public UnityEngine.UI.Image temperatureImage;
     public TemperatureController temperatureController;
+
+    public Sprite[] sprites;
 
     // Start is called before the first frame update
     void Start()
     {
         string s = tempToCelsius(temperatureController.getMinTemp()).ToString();
         setTemperatureText(s);
+        sprites = Resources.LoadAll<Sprite>("Emoji");
     }
 
     // Update is called once per frame
     void Update()
     {
-        changeDisplay();
+        changeTemperature();
+        changeEmoji();
     }
 
-    public void changeDisplay()
+    public void changeTemperature()
     {
         if (thermostatInteractable.isActive() == true)
         {
-
             string s = tempToCelsius(temperatureController.getTemperature()).ToString();
             setTemperatureText(s);
+        }
+    }
+
+    public void changeEmoji()
+    {
+        if(tempToCelsius(temperatureController.getTemperature()) <= 18)
+        {
+            temperatureImage.sprite = sprites[0];
+        } 
+        else if(tempToCelsius(temperatureController.getTemperature()) > 18 && tempToCelsius(temperatureController.getTemperature()) <= 20)
+        {
+            temperatureImage.sprite = sprites[2];
+        }
+        else
+        {
+            temperatureImage.sprite = sprites[1];
         }
     }
 
