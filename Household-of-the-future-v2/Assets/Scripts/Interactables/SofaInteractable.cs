@@ -8,6 +8,7 @@ public class SofaInteractable : Interactable
     public Transform offTheSofaLocation;
     private Player player;
     private AudioPlayer audioPlayer;
+    
     //  private Transform locationBeforeSittingOnSofa;
     //private Audio liftmuziekje
 
@@ -61,10 +62,12 @@ public class SofaInteractable : Interactable
     {
         for (float i = 0; i <= amountInSeconds; i += Time.deltaTime)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.R))
             {
                 getOffSofa();
                 break;
+                
+
             }
             yield return null;
         }
@@ -78,6 +81,11 @@ public class SofaInteractable : Interactable
         player.transform.SetPositionAndRotation(offTheSofaLocation.transform.position, offTheSofaLocation.transform.rotation);
         player.enablePlayerControls();
         isSittingOnTheSofa = false;
+        if (audioPlayer)
+        {
+            audioPlayer.play("Silent");
+        }
+
     }
 
     public override bool isActive()
