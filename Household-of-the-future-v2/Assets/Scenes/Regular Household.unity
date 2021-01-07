@@ -1516,6 +1516,7 @@ MonoBehaviour:
   temperatureText: {fileID: 0}
   temperatureImage: {fileID: 0}
   temperatureController: {fileID: 1480663608}
+  sprites: []
 --- !u!222 &809980377
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1524,7 +1525,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 809980371}
   m_CullTransparentMesh: 0
-  sprites: []
 --- !u!1 &850913509
 GameObject:
   m_ObjectHideFlags: 0
