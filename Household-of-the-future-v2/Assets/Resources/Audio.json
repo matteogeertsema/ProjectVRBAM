@@ -28,7 +28,7 @@
 		{
 			"name": "FeelingCold",
 			"path": "Audio/FeelingCold",
-			"volume": "0.5f"
+      "volume": "0.5f"
 		},
 		{
 			"name": "MoveCurtain",

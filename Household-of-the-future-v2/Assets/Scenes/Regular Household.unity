@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 20909094}
   - component: {fileID: 20909095}
   m_Layer: 0
-  m_Name: Step 6i
+  m_Name: Step 7i
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -242,7 +242,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1763424328}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &20909095
 MonoBehaviour:
@@ -3331,6 +3331,52 @@ Transform:
   m_Father: {fileID: 1190499451}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 20.191002, z: 0}
+--- !u!1 &1223436865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1223436866}
+  - component: {fileID: 1223436867}
+  m_Layer: 0
+  m_Name: Step 6i
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1223436866
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223436865}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1763424328}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1223436867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223436865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f1c82f45cf446f428535f8b51373f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepObjective: Wacht totdat het warm is in huis (Druk op Q om van de bank af te
+    gaan)
+  timeLength: 5
 --- !u!1 &1223819643
 GameObject:
   m_ObjectHideFlags: 0
@@ -3864,6 +3910,7 @@ MonoBehaviour:
   - {fileID: 1675351085}
   - {fileID: 569067760}
   - {fileID: 880363884}
+  - {fileID: 1223436867}
   - {fileID: 20909095}
   startWithOpenCurtains: 1
   startWithLightsOn: 0
@@ -4468,6 +4515,7 @@ Transform:
   - {fileID: 1675351084}
   - {fileID: 569067759}
   - {fileID: 880363883}
+  - {fileID: 1223436866}
   - {fileID: 20909094}
   m_Father: {fileID: 1529759183}
   m_RootOrder: 3
