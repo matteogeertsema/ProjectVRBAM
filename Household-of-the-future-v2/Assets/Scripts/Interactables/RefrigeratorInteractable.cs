@@ -36,7 +36,7 @@ public class RefrigeratorInteractable : Interactable
         
         if (audioPlayer)
         {
-            audioPlayer.play("Switch");
+            audioPlayer.play("FridgeDoor");
         }
     }
 
