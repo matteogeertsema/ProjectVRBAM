@@ -488,8 +488,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 476f4eb70a698e0a4857931bce5bc20d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstLine: Het is koud buiten. Je bent net thuisgekomen van de supermarkt.
-  secondLine: ' Het eerste dat je wilt doen is jezelf opwarmen.'
+  firstLine: 'Je hebt net boodschappen gedaan bij de lokale supermarkt. Op de terugweg
+    ging het sneeuwen en waaien.
+
+
+
+'
+  secondLine: "\rThuis kan je je gelukkig weer opwarmen na deze barre tocht.\r\n\nTip:
+    met de spatiebalk kun je de mobiel oproepen.\r\n"
 --- !u!1001 &180939581
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -976,6 +982,52 @@ MonoBehaviour:
   volume: {fileID: 356534989}
   minTemp: 0
   maxTemp: 75
+--- !u!1 &387733445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 387733446}
+  - component: {fileID: 387733447}
+  m_Layer: 0
+  m_Name: Step 6i
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &387733446
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387733445}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1174469516}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &387733447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387733445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f1c82f45cf446f428535f8b51373f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepObjective: Wacht totdat het warm is in huis (Druk op Q om van de bank af te
+    gaan)
+  timeLength: 15
 --- !u!1 &410853067
 GameObject:
   m_ObjectHideFlags: 0
@@ -2886,6 +2938,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1155125198}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1155125200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155125199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a9d083a371e3b4968dd370f34d1bb8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cvDuration: 10
+  temperatureController: {fileID: 356534992}
 --- !u!65 &1155125201
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2931,6 +2997,7 @@ Transform:
   - {fileID: 1978147504}
   - {fileID: 2112898129}
   - {fileID: 1541298042}
+  - {fileID: 387733446}
   - {fileID: 1870142809}
   m_Father: {fileID: 2052245458}
   m_RootOrder: 3
@@ -3512,9 +3579,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9271eb6b118ae1165afffbdbdb915a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstLine: 'Na het verhogen van de temperatuur zijn alle kamers verwarmd.  '
-  secondLine: Omdat we momenteel alleen in de woonkamer zijn, verspilt het veel energie.
-    Hoe kan dit worden opgelost?
+  firstLine: Het infraroodpaneel heeft alleen de bank verwarmd. De CV installatie
+    heeft daarentegen het hele huis verwarmd.
+  secondLine: 'Een infraroodpaneel verwamt alleen plaatselijk objecten. De lucht
+    wordt niet verwarmd. Bij het gebruik van de  infraroodpanelen wordt hierdoor
+    veel energie bespaard. '
   thirdLine: 
 --- !u!1 &1451041552
 GameObject:
@@ -3791,7 +3860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 375954ffc12689a45a63d4e7134c3e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thermostatInteractable: {fileID: 0}
+  thermostatInteractable: {fileID: 1155125200}
   temperatureText: {fileID: 1329582755}
   temperatureImage: {fileID: 124234393}
   temperatureController: {fileID: 356534992}
@@ -4604,7 +4673,7 @@ GameObject:
   - component: {fileID: 1870142809}
   - component: {fileID: 1870142810}
   m_Layer: 0
-  m_Name: Step 6i
+  m_Name: Step 7i
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4622,7 +4691,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1174469516}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1870142810
 MonoBehaviour:
@@ -4636,9 +4705,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa758b1c2fc78240b8830f412689fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepObjective: Klik op thermostaat
+  stepObjective: "Loop naar de gang om het scenario te be\xEFndigen"
   triggers:
-  - {fileID: 0}
+  - {fileID: 5213101711184079414}
 --- !u!1 &1974627773
 GameObject:
   m_ObjectHideFlags: 0
@@ -4895,8 +4964,9 @@ MonoBehaviour:
   - {fileID: 553878198}
   - {fileID: 2129961338}
   - {fileID: 1978147505}
-  - {fileID: 2112898130}
+  - {fileID: 2112898132}
   - {fileID: 1541298043}
+  - {fileID: 387733447}
   - {fileID: 1870142810}
   startWithOpenCurtains: 1
   startWithLightsOn: 0
@@ -4931,10 +5001,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63effb604995590449560d3b824a82b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioName: 
+  audioName: CloseFrontDoor
   playAtIntro: 1
   playAtOutro: 0
-  delayInSeconds: 0
+  delayInSeconds: 1
 --- !u!1001 &2071202544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5307,8 +5377,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2112898129}
+  - component: {fileID: 2112898132}
   - component: {fileID: 2112898130}
-  - component: {fileID: 2112898131}
   m_Layer: 0
   m_Name: Step 4i
   m_TagString: Untagged
@@ -5339,13 +5409,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2112898128}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3aa758b1c2fc78240b8830f412689fd5, type: 3}
+  m_Script: {fileID: 11500000, guid: c0daf0ad788d4ea47a44a6f9362281cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepObjective: Klik thermostaat
-  triggers:
-  - {fileID: 0}
---- !u!114 &2112898131
+  mobile: {fileID: 851301719}
+  running: {fileID: 2112898132}
+  text: Moet het IR-paneel aan?
+--- !u!114 &2112898132
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5354,12 +5424,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2112898128}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0daf0ad788d4ea47a44a6f9362281cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f1c82f45cf446f428535f8b51373f27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mobile: {fileID: 851301719}
-  running: {fileID: 2112898130}
-  text: Koud hiero
+  stepObjective: Doet het IR-paneel van de woonkamer aan
+  timeLength: 15
 --- !u!1 &2129961337
 GameObject:
   m_ObjectHideFlags: 0
@@ -6981,5 +7050,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerName: Woonkamer1
-  infraredDuration: 10
+  infraredDuration: 15
   temperatureController: {fileID: 356534992}

@@ -64,7 +64,7 @@ public class SofaInteractable : Interactable
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 getOffSofa();
-                break;
+                break; 
             }
             yield return null;
         }
@@ -78,6 +78,10 @@ public class SofaInteractable : Interactable
         player.transform.SetPositionAndRotation(offTheSofaLocation.transform.position, offTheSofaLocation.transform.rotation);
         player.enablePlayerControls();
         isSittingOnTheSofa = false;
+        if (audioPlayer)
+        {
+            audioPlayer.play("Silent");
+        }
     }
 
     public override bool isActive()

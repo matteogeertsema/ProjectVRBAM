@@ -28,7 +28,12 @@
 		{
 			"name": "FeelingCold",
 			"path": "Audio/FeelingCold",
-      "volume": "0.5f"
+      			"volume": "0.5f"
+		},
+		{
+			"name": "Silent",
+			"path": "Audio/Silent",
+			"volume": "0.75f"
 		},
 		{
 			"name": "MoveCurtain",
