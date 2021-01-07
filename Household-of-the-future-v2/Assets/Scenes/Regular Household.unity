@@ -1331,6 +1331,7 @@ GameObject:
   - component: {fileID: 809980374}
   - component: {fileID: 809980373}
   - component: {fileID: 809980376}
+  - component: {fileID: 809980377}
   m_Layer: 5
   m_Name: Temperature canvas
   m_TagString: Untagged
@@ -1433,6 +1434,14 @@ MonoBehaviour:
   thermostatInteractable: {fileID: 1752371566}
   temperatureText: {fileID: 128061606}
   temperatureController: {fileID: 1480663608}
+--- !u!222 &809980377
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809980371}
+  m_CullTransparentMesh: 0
 --- !u!1 &850913509
 GameObject:
   m_ObjectHideFlags: 0
@@ -4406,7 +4415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a9d083a371e3b4968dd370f34d1bb8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cvDuration: 10
+  cvDuration: 34
   temperatureController: {fileID: 1480663608}
 --- !u!65 &1752371567
 BoxCollider:
