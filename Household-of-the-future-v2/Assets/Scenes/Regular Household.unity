@@ -401,7 +401,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 437827539}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -834,6 +834,7 @@ RectTransform:
   - {fileID: 1932502749}
   - {fileID: 434774965}
   - {fileID: 2002590926}
+  - {fileID: 128061605}
   m_Father: {fileID: 809980372}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3965,7 +3966,7 @@ GameObject:
   - component: {fileID: 1529759182}
   - component: {fileID: 1529759184}
   m_Layer: 0
-  m_Name: IR Heating
+  m_Name: CV heating
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3984,7 +3985,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startLocation: {fileID: 196126381}
-  title: Infrarood verwarming
+  title: CV verwarming
   intro: {fileID: 2086102678}
   outro: {fileID: 1021187805}
   steps:
@@ -4989,7 +4990,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstLine: 'Je hebt net boodschappen gedaan bij de lokale supermarkt. Op de terugweg
     ging het sneeuwen en waaien. '
-  secondLine: Thuis kan je je gelukkig weer opwarmen na deze barre tocht.
+  secondLine: 'Thuis kan je je gelukkig weer opwarmen na deze barre tocht.
+
+
+    Met
+    de toets ''e'' kun je klikken op dingen die groen oplichten. '
 --- !u!1 &2093858324
 GameObject:
   m_ObjectHideFlags: 0
