@@ -3825,6 +3825,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1529759183}
   - component: {fileID: 1529759182}
+  - component: {fileID: 1529759184}
   m_Layer: 0
   m_Name: IR Heating
   m_TagString: Untagged
@@ -3876,6 +3877,22 @@ Transform:
   m_Father: {fileID: 434617415}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1529759184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529759181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63effb604995590449560d3b824a82b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioName: CloseFrontDoor
+  playAtIntro: 1
+  playAtOutro: 0
+  delayInSeconds: 1
 --- !u!1 &1581502758 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3961291735547716461, guid: cbe22cabbeb1256c683a1c8006ae166e,
@@ -4018,8 +4035,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2afe60a090275674ea59cf1f1a18fc8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameSong: yawn
-  delay: 1
+  nameSong: FeelingCold
+  delay: 6
 --- !u!1 &1690458532
 GameObject:
   m_ObjectHideFlags: 0

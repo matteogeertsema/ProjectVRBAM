@@ -7,7 +7,8 @@ public class SofaInteractable : Interactable
     public Transform onTheSofaLocation;
     public Transform offTheSofaLocation;
     private Player player;
-  //  private Transform locationBeforeSittingOnSofa;
+    private AudioPlayer audioPlayer;
+    //  private Transform locationBeforeSittingOnSofa;
     //private Audio liftmuziekje
 
     private bool isSittingOnTheSofa = false;
@@ -23,6 +24,12 @@ public class SofaInteractable : Interactable
     public override void OnActivate()
     {
         sitOnSofa();
+
+        if (audioPlayer)
+            {
+                audioPlayer.play("WaitMusic");
+            }
+        
 
     }
 

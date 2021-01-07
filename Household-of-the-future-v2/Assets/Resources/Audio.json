@@ -11,6 +11,26 @@
 			"volume": "0.5f"
 		},
 		{
+			"name": "CloseFrontDoor",
+			"path": "Audio/CloseFrontDoor",
+			"volume": "0.5f"
+		},
+		{
+			"name": "FridgeDoor",
+			"path": "Audio/FridgeDoor",
+			"volume": "0.5f"
+		},
+		{
+			"name": "WaitMusic",
+			"path": "Audio/WaitMusic",
+			"volume": "0.1f"
+		},
+		{
+			"name": "FeelingCold",
+			"path": "Audio/FeelingCold",
+			"volume": "0.5f"
+		},
+		{
 			"name": "MoveCurtain",
 			"path": "Audio/MoveCurtain",
 			"volume": "0.75f"
