@@ -488,14 +488,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 476f4eb70a698e0a4857931bce5bc20d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstLine: 'Je hebt net boodschappen gedaan bij de lokale supermarkt. Op de terugweg
-    ging het sneeuwen en waaien.
-
-
-
-'
-  secondLine: "\rThuis kan je je gelukkig weer opwarmen na deze barre tocht.\r\n\nMet
-    de spatiebalk kun je de mobiel oproepen.\r\n"
+  firstLine: Het is koud buiten. Je bent net thuisgekomen van de supermarkt.
+  secondLine: ' Het eerste dat je wilt doen is jezelf opwarmen.'
 --- !u!1001 &180939581
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4937,10 +4931,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63effb604995590449560d3b824a82b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioName: CloseFrontDoor
+  audioName: 
   playAtIntro: 1
   playAtOutro: 0
-  delayInSeconds: 1
+  delayInSeconds: 0
 --- !u!1001 &2071202544
 PrefabInstance:
   m_ObjectHideFlags: 0
