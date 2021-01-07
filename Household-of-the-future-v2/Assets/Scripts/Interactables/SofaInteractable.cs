@@ -18,30 +18,42 @@ public class SofaInteractable : Interactable
     public override void OnStart()
     {
         player = FindObjectOfType<PlayerController>().getPlayer();
-
+        {
+            audioPlayer = GameObject.FindObjectOfType<AudioPlayer>();
+            if (!audioPlayer)
+            {
+                Debug.LogError("No instance of Audioplayer found");
+            }
+        }
     }
 
     public override void OnActivate()
     {
+       
+
         sitOnSofa();
-
-        if (audioPlayer)
-            {
-                audioPlayer.play("WaitMusic");
-            }
         
-
     }
 
     private void sitOnSofa()
     {
-      //  locationBeforeSittingOnSofa = player.GetComponent<Transform>();
+        //  locationBeforeSittingOnSofa = player.GetComponent<Transform>();
+
+
+
         player.transform.SetPositionAndRotation(onTheSofaLocation.transform.position, onTheSofaLocation.transform.rotation);
         player.disablePlayerControls();
 
         this.GetComponent<BoxCollider>().isTrigger = true;
         isSittingOnTheSofa = true;
-        StartCoroutine(waitAmoutOfSeconds(20));
+        StartCoroutine(waitAmoutOfSeconds(32));
+        if (audioPlayer)
+        {
+            audioPlayer.play("WaitMusic");
+        }
+
+
+
 
     }
 
@@ -56,6 +68,7 @@ public class SofaInteractable : Interactable
             }
             yield return null;
         }
+       
         getOffSofa();
     }
 
