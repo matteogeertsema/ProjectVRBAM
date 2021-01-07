@@ -38,11 +38,11 @@ public class TemperatureDisplay : MonoBehaviour
 
     public void changeEmoji()
     {
-        if(tempToCelsius(temperatureController.getTemperature()) <= 18)
+        if(tempToCelsius(temperatureController.getTemperature()) <= 17)
         {
             temperatureImage.sprite = sprites[0];
         } 
-        else if(tempToCelsius(temperatureController.getTemperature()) > 18 && tempToCelsius(temperatureController.getTemperature()) <= 20)
+        else if(tempToCelsius(temperatureController.getTemperature()) > 17 && tempToCelsius(temperatureController.getTemperature()) <= 19)
         {
             temperatureImage.sprite = sprites[2];
         }

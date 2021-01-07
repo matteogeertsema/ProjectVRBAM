@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa758b1c2fc78240b8830f412689fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepObjective: Klik op thermostaat
+  stepObjective: Klik op de thermostaat om naar het volgende hoofdstuk te gaan
   triggers:
   - {fileID: 1752371566}
 --- !u!1 &49923038 stripped
@@ -371,84 +371,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &128061604
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 128061605}
-  - component: {fileID: 128061607}
-  - component: {fileID: 128061606}
-  m_Layer: 5
-  m_Name: Temperature text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &128061605
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 128061604}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 437827539}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.4934025, y: 0}
-  m_SizeDelta: {x: 430.1007, y: 60}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &128061606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 128061604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 18
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 1
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 1
---- !u!222 &128061607
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 128061604}
-  m_CullTransparentMesh: 0
 --- !u!1 &156493464 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3961291735447563004, guid: cbe22cabbeb1256c683a1c8006ae166e,
@@ -757,7 +679,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -104.770035, y: 57.565002}
+  m_AnchoredPosition: {x: -104, y: 57.565002}
   m_SizeDelta: {x: 209.54608, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &434774966
@@ -781,7 +703,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 18
+    m_FontSize: 17
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
@@ -792,7 +714,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Luchttemperatuur
+  m_Text: "Luchttemperatuur (\u2103)"
 --- !u!222 &434774967
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -834,7 +756,6 @@ RectTransform:
   - {fileID: 1932502749}
   - {fileID: 434774965}
   - {fileID: 2002590926}
-  - {fileID: 128061605}
   m_Father: {fileID: 809980372}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -997,7 +918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa758b1c2fc78240b8830f412689fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepObjective: Klik op koelkast
+  stepObjective: Klik op de koelkast
   triggers:
   - {fileID: 685436386}
 --- !u!1 &569067758
@@ -1043,7 +964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa758b1c2fc78240b8830f412689fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepObjective: Klik op thermostaat
+  stepObjective: Klik op de thermostaat
   triggers:
   - {fileID: 1752371566}
 --- !u!1 &630440558
@@ -1514,8 +1435,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thermostatInteractable: {fileID: 1752371566}
-  temperatureText: {fileID: 0}
-  temperatureImage: {fileID: 0}
+  temperatureText: {fileID: 1932502750}
+  temperatureImage: {fileID: 1609039179}
   temperatureController: {fileID: 1480663608}
   sprites: []
 --- !u!222 &809980377
@@ -3460,7 +3381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepObjective: Wacht totdat het warm is in huis (Druk op Q om van de bank af te
     gaan)
-  timeLength: 5
+  timeLength: 32
 --- !u!1 &1223819643
 GameObject:
   m_ObjectHideFlags: 0
@@ -4250,7 +4171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameSong: FeelingCold
-  delay: 6
+  delay: 2
 --- !u!1 &1690458532
 GameObject:
   m_ObjectHideFlags: 0
@@ -4925,7 +4846,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 18
+    m_FontSize: 17
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
@@ -4993,8 +4914,8 @@ MonoBehaviour:
   secondLine: 'Thuis kan je je gelukkig weer opwarmen na deze barre tocht.
 
 
-    Met
-    de toets ''e'' kun je klikken op dingen die groen oplichten. '
+    Tip:
+    met de toets ''e'' kun je klikken op dingen die groen oplichten. '
 --- !u!1 &2093858324
 GameObject:
   m_ObjectHideFlags: 0
