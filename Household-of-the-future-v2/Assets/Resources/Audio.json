@@ -21,11 +21,6 @@
 			"volume": "0.5f"
 		},
 		{
-			"name": "Silent",
-			"path": "Audio/Silent",
-			"volume": "0.5f"
-		},
-		{
 			"name": "WaitMusic",
 			"path": "Audio/WaitMusic",
 			"volume": "0.1f"
