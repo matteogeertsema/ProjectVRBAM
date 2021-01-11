@@ -5054,6 +5054,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 566643490587218699, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 950796134880791135, guid: feaeba6a1db87ff32acf56d68b45f04c,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -5569,6 +5574,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7652328233447042996, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: activePlayer
+      value: 
+      objectReference: {fileID: 282328813}
     - target: {fileID: 8206836002926361601, guid: feaeba6a1db87ff32acf56d68b45f04c,
         type: 3}
       propertyPath: m_Camera
