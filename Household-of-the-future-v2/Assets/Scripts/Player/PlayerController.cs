@@ -6,13 +6,13 @@ public class PlayerController : MonoBehaviour {
 
     public Player activePlayer;
 
-    private void Awake() {
-        if (Application.isEditor) {
-            setEditorPlayerAsActivePlayer();
-        } else {
-            setVRPlayerAsActivePlayer();
-        }
-    }
+    //private void Awake() {
+     //   if (Application.isEditor) {
+      //      setEditorPlayerAsActivePlayer();
+       // } else {
+        //    setVRPlayerAsActivePlayer();
+       // }
+    //}
 
     private void setEditorPlayerAsActivePlayer() {
         Debug.Log("setEditorPlayerAsActivePlayer");
