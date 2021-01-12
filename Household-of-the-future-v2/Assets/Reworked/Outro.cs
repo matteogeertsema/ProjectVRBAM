@@ -41,7 +41,7 @@ public class Outro : MonoBehaviour {
         double energyConsumedOverAYear = Math.Round(energyConsumedInKWh * 365, 2);
         double energyCostsAYear = Math.Round(energyConsumedOverAYear * 0.22, 2); // Gemiddelde energieprijs 2020 = 0.22 euro per 1 kWh.
         double energySaved = Math.Round(energyConsumedRegularHome / energyConsumedSmartHome, 2);
-        return "In de scenario heeft u op jaarbasis " + energyConsumedOverAYear + " kWh aan energie verbruikt. Dit komt uit op €" + energyCostsAYear + " (0,22 euro per 1 kWh). Dat is " + energySaved + " keer minder dan wat u in de gewone woning heeft verbruikt.";
+        return "In het Infrarood scenario heeft u op jaarbasis " + energyConsumedSmartHome + " kWh aan energie verbruikt. Dit komt uit op €" + energyCostsAYear + " (0,22 euro per 1 kWh). Dat is " + energySaved + " keer minder dan wat u in de gewone woning heeft verbruikt.";
     }
 
     private string createFinalLineForRegularHome() {
@@ -49,7 +49,7 @@ public class Outro : MonoBehaviour {
         double energyConsumedInKWh = energyConsumed / (1000 * 3600);
         double energyConsumedOverAYear = Math.Round(energyConsumedInKWh * 365, 2);
         double energyCostsAYear = Math.Round(energyConsumedOverAYear * 0.22, 2); // Gemiddelde energieprijs 2020 = 0.22 euro per 1 kWh.
-        return "In de scenario heeft u op jaarbasis " + energyConsumedOverAYear + " kWh aan energie verbruikt. Dit komt uit op €" + energyCostsAYear + " (0,22 euro per 1 kWh).";
+        return "In het CV scenario heeft u op jaarbasis " + energyConsumed + " kWh aan energie verbruikt. Dit komt uit op €" + energyCostsAYear + " (0,22 euro per 1 kWh).";
     }
 
 }

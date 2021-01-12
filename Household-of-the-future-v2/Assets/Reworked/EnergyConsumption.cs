@@ -13,6 +13,7 @@ public class EnergyConsumption {
 
     public void addAmountConsumedRegularHome(double amount) {
         this.amountConsumedInWHRegularHome += amount;
+        Debug.Log(amountConsumedInWHRegularHome);
     }
 
     public double getAmountConsumedSmartHome() {
