@@ -17,6 +17,7 @@ public class ThermostatInteractable : Interactable {
     private bool isWorking = false;
 
     public TemperatureController temperatureController;
+    public ComfortController comfortController;
 
     // Start is called before the first frame update
     public override void OnStart() {
@@ -35,13 +36,14 @@ public class ThermostatInteractable : Interactable {
         {
             isBusy = true;
             isWorking = true;
+            comfortController.insideTheWarmth(cvDuration);
             StartCoroutine(CVon());
         } else if (isWorking)
         {
             isBusy = true;
             isWorking = false;
-            StartCoroutine(CVoff());
-        }
+            comfortController.outsideTheWarmth(cvDuration);
+            StartCoroutine(CVoff());        }
         
     }
 
@@ -49,7 +51,7 @@ public class ThermostatInteractable : Interactable {
 
     {
         float timeElapsed = 0;
-        float temporarilyTemp = temperatureController.getCurrentTemp();
+        float temporarilyTemp = temperatureController.getTemperature();
 
         while (timeElapsed < cvDuration)
         {
@@ -72,7 +74,7 @@ public class ThermostatInteractable : Interactable {
 
     {
         float timeElapsed = 0;
-        float temporarilyTemp = temperatureController.getCurrentTemp();
+        float temporarilyTemp = temperatureController.getTemperature();
 
         while (timeElapsed < cvDuration)
         {
