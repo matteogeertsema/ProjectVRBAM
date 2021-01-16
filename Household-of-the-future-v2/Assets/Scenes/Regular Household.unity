@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 20909094}
   - component: {fileID: 20909095}
   m_Layer: 0
-  m_Name: Step 7i
+  m_Name: Step 8i
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,9 +256,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa758b1c2fc78240b8830f412689fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepObjective: Klik op de thermostaat om naar het volgende hoofdstuk te gaan
+  stepObjective: Haal een verfrissende versnapering uit de koelkast om naar het volgende
+    hoofdstuk te gaan
   triggers:
-  - {fileID: 1752371566}
+  - {fileID: 685436386}
 --- !u!1 &49923038 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3961291734716656972, guid: cbe22cabbeb1256c683a1c8006ae166e,
@@ -1607,7 +1608,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa758b1c2fc78240b8830f412689fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepObjective: Ga zitten op de bank
+  stepObjective: De cv staat aan. Het huis wordt langzaam warm.  Ga zitten op de
+    bank
   triggers:
   - {fileID: 1021815352}
   - {fileID: 1021815354}
