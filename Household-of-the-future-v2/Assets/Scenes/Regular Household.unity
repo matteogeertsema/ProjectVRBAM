@@ -1712,6 +1712,80 @@ MonoBehaviour:
   stepObjective: Doe het licht uit van het toilet
   triggers:
   - {fileID: 1021815347}
+--- !u!1 &966711659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 966711660}
+  - component: {fileID: 966711662}
+  - component: {fileID: 966711661}
+  m_Layer: 5
+  m_Name: PCcontrols
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &966711660
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966711659}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3057226647445725251}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000011444, y: -132}
+  m_SizeDelta: {x: 895.42896, y: 374.57764}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &966711661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966711659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 2e7d653b6a5154d4db0a620fd21cb5f6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &966711662
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966711659}
+  m_CullTransparentMesh: 0
 --- !u!1 &1000746491 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3961291735542931438, guid: cbe22cabbeb1256c683a1c8006ae166e,
@@ -5098,6 +5172,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1999731883198997838, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 401
+      objectReference: {fileID: 0}
     - target: {fileID: 2923952561544870488, guid: feaeba6a1db87ff32acf56d68b45f04c,
         type: 3}
       propertyPath: m_CullingMask.m_Bits
@@ -5113,6 +5192,11 @@ PrefabInstance:
       propertyPath: volume
       value: 
       objectReference: {fileID: 1480663605}
+    - target: {fileID: 3057226647313494340, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: PCcontrolsImage
+      value: 
+      objectReference: {fileID: 966711661}
     - target: {fileID: 3057226647313494340, guid: feaeba6a1db87ff32acf56d68b45f04c,
         type: 3}
       propertyPath: temperatureText
@@ -5138,6 +5222,16 @@ PrefabInstance:
       propertyPath: m_RenderMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3716922714105995711, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -28
+      objectReference: {fileID: 0}
+    - target: {fileID: 3716922714105995711, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -340
+      objectReference: {fileID: 0}
     - target: {fileID: 4134291329879526692, guid: feaeba6a1db87ff32acf56d68b45f04c,
         type: 3}
       propertyPath: m_IsActive
@@ -5152,6 +5246,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: onOutroButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602083479919266179, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602083479919266179, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 207
       objectReference: {fileID: 0}
     - target: {fileID: 5063543320822596598, guid: feaeba6a1db87ff32acf56d68b45f04c,
         type: 3}
@@ -5483,6 +5587,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6480466197677574138, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480466197677574138, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 129
+      objectReference: {fileID: 0}
     - target: {fileID: 6519563649970100250, guid: feaeba6a1db87ff32acf56d68b45f04c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5592,6 +5706,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605068720597597614, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00024414
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605068720597597614, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 307
       objectReference: {fileID: 0}
     - target: {fileID: 7652328233447042996, guid: feaeba6a1db87ff32acf56d68b45f04c,
         type: 3}
@@ -5816,6 +5940,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!224 &3057226647445725251 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8638589229152193533, guid: feaeba6a1db87ff32acf56d68b45f04c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3057226647445725243}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4567652853759918037
 PrefabInstance:
   m_ObjectHideFlags: 0

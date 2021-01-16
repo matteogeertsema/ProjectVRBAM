@@ -9,6 +9,7 @@ public class UIHandler : MonoBehaviour {
     public UnityEngine.UI.Text secondLineText;
     public UnityEngine.UI.Text thirdLineText;
     public UnityEngine.UI.Text fourthLineText;
+    public UnityEngine.UI.Image PCcontrolsImage;
 
     public UnityEngine.UI.Text stepObjectiveText;
 
@@ -19,10 +20,12 @@ public class UIHandler : MonoBehaviour {
     public GameObject canvas;
     public GameObject objectiveCanvas;
     public GameObject temperatureCanvas;
+ 
 
 
     public void displayIntro(string title, Introduction intro) {
         setTextFieldsForIntro(title, intro.getFirstLine(), intro.getSecondLine());
+        PCcontrolsImage.enabled = false;
         canvas.SetActive(true);
         StartCoroutine(startIntroTextFadeInAnimation());
     }
@@ -54,6 +57,7 @@ public class UIHandler : MonoBehaviour {
         fourthLineText.color = new Color(255, 255, 255, 0);
         introButton.SetActive(false);
         outroButton.SetActive(false);
+        PCcontrolsImage.enabled = false;
     }
 
     IEnumerator startIntroTextFadeInAnimation() {
@@ -80,6 +84,20 @@ public class UIHandler : MonoBehaviour {
                 secondLineText.color = new Color(255, 255, 255, i);
                 yield return null;
             }
+        }
+
+       
+        for (float i = 0; i <= 2; i += Time.deltaTime)
+        {
+                
+            yield return null;
+        }
+        PCcontrolsImage.enabled = true;
+        
+        for (float i = 0; i <= 2; i += Time.deltaTime)
+        {
+
+            yield return null;
         }
 
         introButton.SetActive(true);

@@ -2877,6 +2877,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3722876695650002737, guid: ce19cf82d2f27fb46a2cd0d2402f0ee9,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722876695650002737, guid: ce19cf82d2f27fb46a2cd0d2402f0ee9,
+        type: 3}
       propertyPath: m_LightProbeUsage
       value: 0
       objectReference: {fileID: 0}
@@ -3008,7 +3013,7 @@ PrefabInstance:
     - target: {fileID: 9182397585581909119, guid: ce19cf82d2f27fb46a2cd0d2402f0ee9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.011
+      value: 11.922
       objectReference: {fileID: 0}
     - target: {fileID: 9182397585581909119, guid: ce19cf82d2f27fb46a2cd0d2402f0ee9,
         type: 3}
@@ -3018,7 +3023,7 @@ PrefabInstance:
     - target: {fileID: 9182397585581909119, guid: ce19cf82d2f27fb46a2cd0d2402f0ee9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.536
+      value: 15.535
       objectReference: {fileID: 0}
     - target: {fileID: 9182397585581909119, guid: ce19cf82d2f27fb46a2cd0d2402f0ee9,
         type: 3}
