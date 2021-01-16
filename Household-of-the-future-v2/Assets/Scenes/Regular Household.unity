@@ -1438,6 +1438,7 @@ MonoBehaviour:
   temperatureText: {fileID: 1932502750}
   temperatureImage: {fileID: 1609039179}
   temperatureController: {fileID: 1480663608}
+  comfortController: {fileID: 1480663609}
   sprites: []
 --- !u!222 &809980377
 CanvasRenderer:
@@ -3381,7 +3382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepObjective: Wacht totdat het warm is in huis (Druk op Q om van de bank af te
     gaan)
-  timeLength: 32
+  timeLength: 1
 --- !u!1 &1223819643
 GameObject:
   m_ObjectHideFlags: 0
@@ -3809,9 +3810,10 @@ GameObject:
   - component: {fileID: 1480663606}
   - component: {fileID: 1480663605}
   - component: {fileID: 1480663608}
+  - component: {fileID: 1480663609}
   m_Layer: 8
   m_Name: TemperatureVolume
-  m_TagString: Untagged
+  m_TagString: IR panel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3844,8 +3846,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.6042328, y: 2.411908, z: 3.5759687}
-  m_Center: {x: -0.3021164, y: -0.14230049, z: -0.50909376}
+  m_Size: {x: 6.472183, y: 5.6873484, z: 8.085309}
+  m_Center: {x: -0.21031094, y: 1.4663954, z: 1.0192628}
 --- !u!4 &1480663607
 Transform:
   m_ObjectHideFlags: 0
@@ -3854,7 +3856,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1480663604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.735, y: 4.565, z: 13.894}
+  m_LocalPosition: {x: 23.122, y: 4.565, z: 13.894}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3875,6 +3877,20 @@ MonoBehaviour:
   volume: {fileID: 1480663605}
   minTemp: 0
   maxTemp: 75
+--- !u!114 &1480663609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480663604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bb5412f652d5aa489dbef5d017e0907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  temperatureController: {fileID: 1480663608}
+  infraredController: {fileID: 0}
 --- !u!1 &1529759181
 GameObject:
   m_ObjectHideFlags: 0
@@ -4543,6 +4559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cvDuration: 34
   temperatureController: {fileID: 1480663608}
+  comfortController: {fileID: 1480663609}
 --- !u!65 &1752371567
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5765,6 +5782,28 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 3057226647445725243}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3057226647445725249 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 566643490587218699, guid: feaeba6a1db87ff32acf56d68b45f04c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3057226647445725243}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &3057226647445725250
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3057226647445725249}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1001 &4567652853759918037
 PrefabInstance:
   m_ObjectHideFlags: 0

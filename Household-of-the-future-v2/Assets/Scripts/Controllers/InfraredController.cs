@@ -8,11 +8,15 @@ public class InfraredController : MonoBehaviour
     public float infraredDuration;
     private bool isWorking = false;
     public TemperatureController temperatureController;
-
+    public ComfortController comfortController;
 
     public void infraredOn()
     {
         isWorking = true;
+        if(comfortController.isInWarmthRadius() == true)
+        {
+            comfortController.insideTheWarmth(infraredDuration);
+        }
         StartCoroutine(infraredOnActive());
     }
 
@@ -20,7 +24,7 @@ public class InfraredController : MonoBehaviour
 
     {
         float timeElapsed = 0;
-        float temporarilyTemp = temperatureController.getCurrentTemp();
+        float temporarilyTemp = temperatureController.getTemperature();
 
         while (timeElapsed < infraredDuration)
         {
@@ -41,6 +45,10 @@ public class InfraredController : MonoBehaviour
     public void infraredOff()
     {
         isWorking = false;
+        if (comfortController.isInWarmthRadius() == true)
+        {
+            comfortController.outsideTheWarmth(infraredDuration);
+        }
         StartCoroutine(infraredOffActive());
     }
 
@@ -48,7 +56,7 @@ public class InfraredController : MonoBehaviour
 
     {
         float timeElapsed = 0;
-        float temporarilyTemp = temperatureController.getCurrentTemp();
+        float temporarilyTemp = temperatureController.getTemperature();
 
         while (timeElapsed < infraredDuration)
         {
@@ -71,4 +79,8 @@ public class InfraredController : MonoBehaviour
         return isWorking;
     }
 
+    public float getDuration()
+    {
+        return infraredDuration;
+    }
 }

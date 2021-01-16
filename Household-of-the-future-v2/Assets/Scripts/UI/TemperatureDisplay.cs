@@ -9,6 +9,7 @@ public class TemperatureDisplay : MonoBehaviour
     public UnityEngine.UI.Text temperatureText;
     public UnityEngine.UI.Image temperatureImage;
     public TemperatureController temperatureController;
+    public ComfortController comfortController;
 
     public Sprite[] sprites;
 
@@ -38,11 +39,11 @@ public class TemperatureDisplay : MonoBehaviour
 
     public void changeEmoji()
     {
-        if(tempToCelsius(temperatureController.getTemperature()) <= 17)
+        if(comfortController.getComfort() < 15)
         {
             temperatureImage.sprite = sprites[0];
         } 
-        else if(tempToCelsius(temperatureController.getTemperature()) > 17 && tempToCelsius(temperatureController.getTemperature()) <= 19)
+        else if(comfortController.getComfort() >= 15 && comfortController.getComfort() < 45)
         {
             temperatureImage.sprite = sprites[2];
         }
