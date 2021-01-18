@@ -1286,10 +1286,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -5172,6 +5172,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1659864661773424145, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1999731883198997838, guid: feaeba6a1db87ff32acf56d68b45f04c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -5246,6 +5251,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: onOutroButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514730971238544296, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514730971238544296, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514730971238544296, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 4602083479919266179, guid: feaeba6a1db87ff32acf56d68b45f04c,
         type: 3}
@@ -5831,6 +5851,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8919948677956852327, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8919948677956852327, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8919948677956852327, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8919948677956852327, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 8919948677956852327, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feaeba6a1db87ff32acf56d68b45f04c, type: 3}

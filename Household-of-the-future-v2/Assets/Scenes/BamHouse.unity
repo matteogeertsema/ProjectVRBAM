@@ -1879,6 +1879,80 @@ MonoBehaviour:
   stepObjective: Ga naar beneden
   triggers:
   - {fileID: 5213101711184079414}
+--- !u!1 &818393209
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 818393212}
+  - component: {fileID: 818393211}
+  - component: {fileID: 818393210}
+  m_Layer: 5
+  m_Name: PCcontrols
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &818393210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818393209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 2e7d653b6a5154d4db0a620fd21cb5f6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &818393211
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818393209}
+  m_CullTransparentMesh: 0
+--- !u!224 &818393212
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818393209}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 851301729}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000061035156, y: -131.99994}
+  m_SizeDelta: {x: 895.42896, y: 374.57764}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &835156030 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5213101710236986472, guid: 7be56d239f706b9719f98e130c49cab1,
@@ -2080,6 +2154,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3057226647313494340, guid: feaeba6a1db87ff32acf56d68b45f04c,
         type: 3}
+      propertyPath: PCcontrolsImage
+      value: 
+      objectReference: {fileID: 818393210}
+    - target: {fileID: 3057226647313494340, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
       propertyPath: temperatureCanvas
       value: 
       objectReference: {fileID: 1539046018}
@@ -2102,6 +2181,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: onOutroButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514730971238544296, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514730971238544296, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514730971238544296, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 5528203622220074202, guid: feaeba6a1db87ff32acf56d68b45f04c,
         type: 3}
@@ -2333,6 +2427,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8919948677956852327, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8919948677956852327, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 8919948677956852327, guid: feaeba6a1db87ff32acf56d68b45f04c,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feaeba6a1db87ff32acf56d68b45f04c, type: 3}
 --- !u!114 &851301719 stripped
@@ -2471,6 +2580,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!224 &851301729 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8638589229152193533, guid: feaeba6a1db87ff32acf56d68b45f04c,
+    type: 3}
+  m_PrefabInstance: {fileID: 851301718}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &908708155
 GameObject:
   m_ObjectHideFlags: 0
@@ -4197,10 +4312,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
