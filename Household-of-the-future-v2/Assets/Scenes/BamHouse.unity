@@ -1358,7 +1358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skyboxNight: {fileID: 2100000, guid: c494c335823f54b52b2e87e1b7a63a23, type: 2}
-  skyboxDay: {fileID: 2100000, guid: 7416536dbe0334cfd888dd1beb75a9fb, type: 2}
+  skyboxDay: {fileID: 2100000, guid: d11d338e6a849d84f85a289f91b3fa00, type: 2}
   colorOfBulbLights: {r: 1, g: 0.84788746, b: 0.6367924, a: 0}
   rangeOfBulbLights: 10
   mainLight: {fileID: 600393405}
