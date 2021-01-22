@@ -28,6 +28,8 @@ public class TemperatureDisplay : MonoBehaviour
         changeEmoji();
     }
 
+    // Changes the temperature text in display to the accurate temperature value
+    // Temperature only changes if cv is turning on or off (is busy)
     public void changeTemperature()
     {
         if (thermostatInteractable.isActive() == true)
@@ -37,6 +39,7 @@ public class TemperatureDisplay : MonoBehaviour
         }
     }
 
+    // Changes emoji in display through the comfort value
     public void changeEmoji()
     {
         if(comfortController.getComfort() < 15)
@@ -53,11 +56,13 @@ public class TemperatureDisplay : MonoBehaviour
         }
     }
 
+    // Set temperature display value
     public void setTemperatureText(string newTemperature)
     {
         this.temperatureText.text = newTemperature;
     }
 
+    // Converts temperature value to celsius
     public int tempToCelsius(float temp)
     {
         Math.Round(temp);

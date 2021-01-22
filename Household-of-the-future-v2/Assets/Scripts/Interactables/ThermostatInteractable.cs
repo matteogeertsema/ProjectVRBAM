@@ -27,6 +27,9 @@ public class ThermostatInteractable : Interactable {
         }
     }
 
+    // Is called when thermostat is clicked
+    // Looks if cv is on or off then turns cv on or off
+    // Also calls the comfortcontroller to adjust the comfort in the appropriate duration
     public override void OnActivate() {
         if (audioPlayer) {
             audioPlayer.play("Switch");
@@ -47,6 +50,7 @@ public class ThermostatInteractable : Interactable {
         
     }
 
+    // Changes the temperature value in a duration of time
     IEnumerator CVon()
 
     {
@@ -70,6 +74,7 @@ public class ThermostatInteractable : Interactable {
         isBusy = false;
     }
 
+    // Changes the temperature value in a duration of time
     IEnumerator CVoff()
 
     {
@@ -94,10 +99,12 @@ public class ThermostatInteractable : Interactable {
          isBusy = false;
     }
 
+    // Isbusy is true when the cv is turning on or off and false when its not busy in turning on or off
     public override bool isActive() {
         return isBusy;
     }
 
+    // Gives back if the cv is on or off
     public bool isOn()
     {
         return isWorking;

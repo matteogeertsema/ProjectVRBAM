@@ -18,21 +18,25 @@ public class TemperatureController : MonoBehaviour
         setTemperature(0);
     }
 
+    // Gets temperature from post processing volume in unity
     public float getTemperature()
     {
         return _ColorGrading.temperature.value;
     }
 
+    // Changes temperature value
     public void setTemperature(float temp)
     {
         _ColorGrading.temperature.value = temp;
     }
 
+    // Gets min temperature set in the post processing volume in unity
     public float getMinTemp()
     {
         return minTemp;
     }
 
+    // Gets max temperature set in the post processing volume in unity
     public float getMaxTemp()
     {
         return maxTemp;

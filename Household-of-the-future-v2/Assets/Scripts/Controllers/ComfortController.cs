@@ -6,6 +6,7 @@ public class ComfortController : MonoBehaviour
 {
     public TemperatureController temperatureController;
     public InfraredController infraredController;
+    // comfort = gevoelstemperatuur
     private float comfort;
     private float duration;
     private bool isWorking;
@@ -17,6 +18,7 @@ public class ComfortController : MonoBehaviour
         comfort = temperatureController.getTemperature();
     }
 
+    // Gets the duration so it works with cv and infrared. 
     public void insideTheWarmth(float duration)
     {
         this.duration = duration;
@@ -24,15 +26,15 @@ public class ComfortController : MonoBehaviour
         StartCoroutine(insideTheWarmthCounter());
     }
 
+    // Sets comfort in a duration of time. Also checks if the warmth changes and if so stops the loop
     IEnumerator insideTheWarmthCounter()
-
     {
         float timeElapsed = 0;
         float temporarilyTemp = temperatureController.getTemperature();
 
         while (timeElapsed < duration)
         {
-            comfort = Mathf.Lerp(temporarilyTemp, temperatureController.getMaxTemp(), timeElapsed / duration);
+            setComfort(Mathf.Lerp(temporarilyTemp, temperatureController.getMaxTemp(), timeElapsed / duration));
             timeElapsed += Time.deltaTime;
 
             if (isWorking == false)
@@ -42,10 +44,10 @@ public class ComfortController : MonoBehaviour
 
             yield return null;
         }
-        comfort = temperatureController.getMaxTemp();
+        setComfort(temperatureController.getMaxTemp());
 
     }
-
+    // Gets the duration so it works with cv and infrared.
     public void outsideTheWarmth(float duration)
     {
         this.duration = duration;
@@ -53,6 +55,7 @@ public class ComfortController : MonoBehaviour
         StartCoroutine(outsideTheWarmthCounter());
     }
 
+    // Sets comfort in a duration of time. Also checks if the warmth changes and if so stops the loop
     IEnumerator outsideTheWarmthCounter()
 
     {
@@ -61,7 +64,7 @@ public class ComfortController : MonoBehaviour
 
         while (timeElapsed < duration)
         {
-            comfort = Mathf.Lerp(temporarilyTemp, temperatureController.getMinTemp(), timeElapsed / duration);
+            setComfort(Mathf.Lerp(temporarilyTemp, temperatureController.getMinTemp(), timeElapsed / duration));
             timeElapsed += Time.deltaTime;
 
             if (isWorking == true)
@@ -71,10 +74,11 @@ public class ComfortController : MonoBehaviour
 
             yield return null;
         }
-        comfort = temperatureController.getMinTemp();
+        setComfort(temperatureController.getMinTemp());
 
     }
-
+    // Specifically made for if infaredpanel is on and player steps inside radius infrared, so it changes comfort without needing the current temperature
+    // Gets called in OnTriggerEnter()
     public void gettingWarm()
     {
         this.duration = 10;
@@ -83,14 +87,13 @@ public class ComfortController : MonoBehaviour
     }
 
     IEnumerator gettingWarmCounter()
-
     {
         float timeElapsed = 0;
         float temporarilyComfort = comfort;
 
         while (timeElapsed < duration)
         {
-            comfort = Mathf.Lerp(temporarilyComfort, temperatureController.getMaxTemp(), timeElapsed / duration);
+            setComfort(Mathf.Lerp(temporarilyComfort, temperatureController.getMaxTemp(), timeElapsed / duration));
             timeElapsed += Time.deltaTime;
 
             if (isWorking == false)
@@ -100,10 +103,12 @@ public class ComfortController : MonoBehaviour
 
             yield return null;
         }
-        comfort = temperatureController.getMaxTemp();
+        setComfort(temperatureController.getMaxTemp());
 
     }
 
+    // Specifically made for if infaredpanel is on and player steps outisde radius infrared, so it changes comfort without needing the current temperature
+    // Gets called in OnTriggerExit()
     public void gettingCold()
     {
         this.duration = 10;
@@ -119,7 +124,7 @@ public class ComfortController : MonoBehaviour
 
         while (timeElapsed < duration)
         {
-            comfort = Mathf.Lerp(temporarilyComfort, temperatureController.getMinTemp(), timeElapsed / duration);
+            setComfort(Mathf.Lerp(temporarilyComfort, temperatureController.getMinTemp(), timeElapsed / duration));
             timeElapsed += Time.deltaTime;
 
             if (isWorking == true)
@@ -129,10 +134,11 @@ public class ComfortController : MonoBehaviour
 
             yield return null;
         }
-        comfort = temperatureController.getMinTemp();
+        setComfort(temperatureController.getMinTemp());
 
     }
 
+    // Gets called if player enters the infraredpanel radius. Only changes comfort if the infraredpanel is on
     private void OnTriggerEnter(Collider other)
     {
         inWarmthRadius = true;
@@ -142,6 +148,7 @@ public class ComfortController : MonoBehaviour
         }
     }
 
+    // Gets called if player exits the infraredpanel radius. Only changes comfort if the infraredpanel is on
     private void OnTriggerExit(Collider other)
     {
         inWarmthRadius = false;

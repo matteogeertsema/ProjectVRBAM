@@ -10,6 +10,7 @@ public class InfraredController : MonoBehaviour
     public TemperatureController temperatureController;
     public ComfortController comfortController;
 
+    // Activates infaredpanel and looks if player is inside infraredpanel radius. If so change the comfort(gevoelstemperatuur in display)
     public void infraredOn()
     {
         isWorking = true;
@@ -20,8 +21,8 @@ public class InfraredController : MonoBehaviour
         StartCoroutine(infraredOnActive());
     }
 
+    // Sets temperature of infraredpanel in a duration of time. Also checks if the infraredpanel is activated again and if so stops the loop
     IEnumerator infraredOnActive()
-
     {
         float timeElapsed = 0;
         float temporarilyTemp = temperatureController.getTemperature();
@@ -42,6 +43,7 @@ public class InfraredController : MonoBehaviour
 
     }
 
+    // Deactivates infaredpanel and looks if player is inside infraredpanel radius. If so change the comfort(gevoelstemperatuur in display)
     public void infraredOff()
     {
         isWorking = false;
@@ -52,6 +54,7 @@ public class InfraredController : MonoBehaviour
         StartCoroutine(infraredOffActive());
     }
 
+    // Sets temperature of infraredpanel in a duration of time. Also checks if the infraredpanel is activated again and if so stops the loop
     IEnumerator infraredOffActive()
 
     {
@@ -73,12 +76,13 @@ public class InfraredController : MonoBehaviour
         temperatureController.setTemperature(temperatureController.getMinTemp());
 
     }
-
+    // Gives back if infraredpanel is turned on or off
     public bool isOn()
     {
         return isWorking;
     }
-
+    // Gets the duration that is set in unity
+    // The duration is how long it takes to get from minTemp to maxTemp and vice versa
     public float getDuration()
     {
         return infraredDuration;

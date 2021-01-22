@@ -33,7 +33,6 @@ public class RefrigeratorInteractable : Interactable
 
     public override void OnActivate()
     {
-        
         if (audioPlayer)
         {
             audioPlayer.play("FridgeDoor");

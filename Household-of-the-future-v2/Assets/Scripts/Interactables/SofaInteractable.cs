@@ -11,9 +11,6 @@ public class SofaInteractable : Interactable
     //  private Transform locationBeforeSittingOnSofa;
     //private Audio liftmuziekje
 
-    private bool isSittingOnTheSofa = false;
-
-
     // Start is called before the first frame update
     public override void OnStart()
     {
@@ -27,36 +24,30 @@ public class SofaInteractable : Interactable
         }
     }
 
+    // Is called when a sofa is clicked
     public override void OnActivate()
     {
-       
-
-        sitOnSofa();
-        
+        sitOnSofa();  
     }
 
+    // Transport player to given position and disable controls
+    // Duration is 32 sec to sync with music and timestep in IR heating
     private void sitOnSofa()
     {
         //  locationBeforeSittingOnSofa = player.GetComponent<Transform>();
-
-
-
         player.transform.SetPositionAndRotation(onTheSofaLocation.transform.position, onTheSofaLocation.transform.rotation);
         player.disablePlayerControls();
 
         this.GetComponent<BoxCollider>().isTrigger = true;
-        isSittingOnTheSofa = true;
         StartCoroutine(waitAmoutOfSeconds(32));
         if (audioPlayer)
         {
             audioPlayer.play("WaitMusic");
         }
-
-
-
-
     }
 
+    // Calls getOffSofa after a amount of seconds
+    // In those amount of seconds player can also press q to get off sofa
     IEnumerator waitAmoutOfSeconds(int amountInSeconds)
     {
         for (float i = 0; i <= amountInSeconds; i += Time.deltaTime)
@@ -72,12 +63,12 @@ public class SofaInteractable : Interactable
         getOffSofa();
     }
 
+    //Transport player to given position and enable controls
     private void getOffSofa()
     {
 
         player.transform.SetPositionAndRotation(offTheSofaLocation.transform.position, offTheSofaLocation.transform.rotation);
         player.enablePlayerControls();
-        isSittingOnTheSofa = false;
         if (audioPlayer)
         {
             audioPlayer.play("Silent");
@@ -86,7 +77,7 @@ public class SofaInteractable : Interactable
 
     public override bool isActive()
     {
-        return isSittingOnTheSofa;
+        return false;
     }
 
     public override void OnUpdate()
