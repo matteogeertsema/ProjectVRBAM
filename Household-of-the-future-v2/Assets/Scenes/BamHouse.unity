@@ -5375,7 +5375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startLocation: {fileID: 1183730357}
-  title: Infrarood verwarming
+  title: Infraroodverwarming
   intro: {fileID: 164181942}
   outro: {fileID: 1417618523}
   steps:
